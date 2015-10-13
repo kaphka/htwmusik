@@ -25,7 +25,7 @@ Ich habe einige Tutorials für das bibliothekarische Umfeld geschrieben, die tei
 
 1. [Naive Bayes Classificator und das Vektorraummodell](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/NaiveBayes.ipynb)
 2. [Clustering und Textanalyse](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/ClusteringTextAnalysis.ipynb)
-3. [Metadatenabzüge und Netzwerkanalyse](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/oai_test.ipynb)
+3. [OAI-PMH-Metadatenabzüge und Netzwerkanalyse](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/oai_test.ipynb)
 
 Die versprochenen Links für die einzelnen Aufgabengebiete werde ich nach und nach ergänzen. 
 
