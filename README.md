@@ -14,7 +14,24 @@ Der „Alphabetische Imagekatalog der Musikabteilung“ umfasst ca. eine Million
 
 Um die vier Aufgabengebiete zu bearbeiten bietet sich der Einsatz folgender Technologien an bzw. sind folgende Anforderungen denkbar.
 
+## Hinweise zur Vorbereitung
+
+Eine Möglichkeit, gut mit den zukünftig anfallenden Daten umzugehen, d.h., sie zu analysieren und zu visualisieren, sind ohne Frage Python und die damit verbundenen Pakete. Um interaktiv mit den Daten zu arbeiten, kann man beispielsweise [Jupyter](https://jupyter.org/) installieren. Dabei handelt es sich um eine lokal einsetzbare Web-Anwendung, die sogenannte Notebooks bereitstellt, welche sämtliche Code-, Visualisierungs- und Textartefakte aufnehmen, die bei der Arbeit im Team anfallen. Letztendlich kann man Notebooks auch einfach zu github hochladen (die von mir erstellten Dokumente sind ebenfalls Notebooks).
+Ein Tutorial zur Installation findet sich [hier](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/dst4l0.ipynb).
+
+Der wesentliche Vorteil von Jupyter wird sich nach der ersten OCR zeigen, wenn man herausfinden möchte, was tatsächlich für Daten generiert wurden. In Python (oder einer der anderen unterstützten Sprachen) ist es in der Regel einfacher mit Daten zu interagieren, als mit einer Hochsprache, z.B. Java, ein eigenes Programm zu schreiben.
+
+Ich habe einige Tutorials für das bibliothekarische Umfeld geschrieben, die teilweise auch theoretische Hintergründe kurz umreißen, die auf Euch zukommen werden. Die Tutorials bauen aufeinander auf.
+
+1. [Naive Bayes Classificator und das Vektorraummodell](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/NaiveBayes.ipynb)
+2. [Clustering und Textanalyse](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/ClusteringTextAnalysis.ipynb)
+3. [Metadatenabzüge und Netzwerkanalyse](https://github.com/elektrobohemian/dst4l-copenhagen/blob/master/oai_test.ipynb)
+
+Die versprochenen Links für die einzelnen Aufgabengebiete werde ich nach und nach ergänzen. 
+
 ## Aufgabengebiet 1
+
+[Weitere Hinweise zu Aufgabengebiet 1](aufgabengebiet1.ipynb)
 
 * Mustererkennung und Segmentierung, um bestimmte Bereiche auf einem Katalogzettel seiner Funktion (z.B. Signaturnummer) zuzuordnen
 * Training und Anpassung von OCR-Software (z.B. Tesseract OCR) aufgrund der Mehrsprachigkeit und der teils handschriftlichen Beschriftung der Zettel
