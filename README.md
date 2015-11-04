@@ -1,5 +1,7 @@
 # Erschließungs- und Visualisierungswerkzeuge für den Imagekatalog der Musikabteilung der Staatsbibliothek zu Berlin
 
+[![Join the chat at https://gitter.im/kaphka/htwmusik](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kaphka/htwmusik?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Kernaspekte: OCR, Information Retrieval, Information Visualization, Linked Data
 
 Der „Alphabetische Imagekatalog der Musikabteilung“ umfasst ca. eine Million gescannte Katalogzettel, die mittels einer Web-Anwendung interessierten Nutzerinnen und Nutzer präsentiert werden (http://musikipac.staatsbibliothek-berlin.de/catalog/toc). Um diese teils unikalen Bestände der Staatsbibliothek besser durchsuchbar zu machen, muss der Katalog mittelfristig einer Retrokonversion (http://de.wikipedia.org/wiki/Retrokonversion) unterzogen werden. Ziel des Projektes ist es, geeignete Werkzeuge zu entwickeln, die sowohl Bibliothekarinnen und Bibliothekare sowie Nutzerinnen und Nutzer bei folgenden Tätigkeiten zu unterstützen:
