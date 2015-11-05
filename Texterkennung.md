@@ -29,7 +29,7 @@ OCR für alle Karten
 
 "ground truth" in einen Git-Repository speichern
 csv-Datei für Kartenkategorie
-txt-Datei pro Segment
+.gt.txt-Datei pro Textzeile
 
 Aufteilen der Daten in Trainings- und Testset (70:30 Split)
 
