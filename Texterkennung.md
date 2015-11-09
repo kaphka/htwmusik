@@ -25,6 +25,7 @@ Ist die Erkennung von Korrekturen, Stempeln, Unterstreichungen hilfreich?
 
 
 ## Durchführung
+![Durchführung](/bilder/ocr-detail-entwurf.jpg)
 ### Trainingsdaten erstellen
 OCR für alle Karten anwenden
 Möglichkeiten um mehr Trainingsdaten zu erhalten:
