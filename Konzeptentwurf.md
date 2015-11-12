@@ -5,8 +5,8 @@
 Kernaufgabe der Anwendung(en) ist die
 Gewinnung von strukturierten Daten aus dem Katalogs der Musikabteilung.
 
-Diese Daten sollen eine Retrokonversion des Katalogs
-unterstützen.
+Diese Daten sollen die Retrokonversion des Katalogs
+unterstützen und für Nutzer verfügbar sein.
 
 ## Die alphabetischen Imagekataloge der Musikabteilung
 
@@ -47,6 +47,15 @@ Nicht die Entwicklung sondern die Anpassung von OCR-Methoden stellt hier die eig
 
 Quelloffene Software ist in den meisten Fällen nicht nur kostenlos, sondern auch wartbar und anpassbar. Dies ist auch wichtig im wenn die Software bei anderen Retrokonversionensprojekten eingesetzt werden soll.
 
+
+### Strukturierung und Validierung der Texte
+Die Texte werden Klassifiziert und nach Entitäten durchsucht.
+Eine Klassifizierung (z.B.: nach Medienart, Art des Werkes, ...) soll eine Retrokonversion erleichtern.
+Die Klassifizierung von Karten kann auch für die Faceted Navigation genutzt werden.
+
+Die GND wird genutzt um Inhalte zu validieren und zu normalisieren.
+Andere Datenbanken werden genutzt um die 
+
 ### Datenhaltung und Server
 Eine Umsetzung als Webservice mit Weboberfläche (HTML und JS) bereitgestellt durch eine
 Java-REST-Server bietet sich aufgrund der Kenntnisse im Team an. (?)
@@ -54,6 +63,11 @@ Java-REST-Server bietet sich aufgrund der Kenntnisse im Team an. (?)
 Alle Daten sollten in einem Datenaustauschformat verfügbar sein.
 Dies soll eine Integration in andere Services der Staatsbibliothek erleichtern.
 
-## TODO: Zeitplannung, Milestones, Arbeitspakete
+## TODO: Zeitplanung, Milestones, Arbeitspakete
 
-
+### OCR
+Testdaten ist nötig um verschiedene OCR-Systeme zu vergleichen.
+Die Erstellung von Trainingsdaten ist ein weitaus größerer Aufwand,
+da modernere Verfahren ( aus dem Bereich Maschinen Lernen) grosse Mengen benötigen. 
+### Semantische Analyse
+### Datenbank
