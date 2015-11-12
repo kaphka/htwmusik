@@ -8,8 +8,8 @@ Das Projekt wird von vier Studenten, Herrn Simon Albrecht, Herrn Jakob Schmollin
 
 ## Projektumschreibung
 
-Die Staatsbibliothek zu Berlin, unterhält ein umfassendes Musikarchiv, mit vielen Werken aus vergangener und heutiger Zeit. Diese werden seit dem Bestehen der Bibliothek auf Karteikarten festgehalten und gesammelt. Der Umfang bemisst sich derzeit auf rund eine Million Karten, die in diesem Projekt in das digitale Archiv und Katalogsystem überführt werden sollen. Aufgrund der Anzahl, wäre eine Digitalisierung durch analoges menschliches Erfassen sehr aufwändig.
-Deshalb soll mithilfe von OCR-Software die im TIF-Format vorliegenden abfotografierten Karteikarten digitalisiert werden. Dafür müssen verschiedene Mechanismen implementiert werden, die die OCR-Ergebnisse überprüfen und validieren können.
+Die Staatsbibliothek zu Berlin unterhält ein umfassendes Musikarchiv, mit vielen Werken aus vergangener und heutiger Zeit. Diese werden seit dem Bestehen der Bibliothek auf Karteikarten festgehalten und gesammelt. Der Umfang bemisst sich derzeit auf rund eine Million Karten, die in diesem Projekt in das digitale Archiv und Katalogsystem überführt werden sollen. Aufgrund der Anzahl, wäre eine Digitalisierung durch analoges menschliches Erfassen sehr aufwändig.
+Deshalb soll mithilfe von OCR-Software die im TIF-Format vorliegenden gescannten Karteikarten digitalisiert werden. Dafür müssen verschiedene Mechanismen implementiert werden, die die OCR-Ergebnisse überprüfen und validieren können.
 
 ## Aufgabenstellung
 
@@ -31,7 +31,7 @@ Siehe [Texterkennung](/Texterkennung.md).
 
 ### Strukturierung und Klassifizierung der Daten
 Die Analyse mit OCR-Sofware gibt uns lediglich Aufschluss über den
-Textinhalt der Karte. Deswegen wird im nächstem Schritt der
+Textinhalt der Karte. Deswegen wird im nächsten Schritt der
 semantische Inhalt der Karten erkannt.
 
 Wortgruppen können mit unterschiedlichen Verfahren klassifiziert werden.
@@ -50,9 +50,9 @@ Dies erleichtert(/ ermöglicht) das Auffinden von Dokumenten der Musikabteilung.
 
 ### Texterkennung
 Es gibt viele kommerzielle und/oder quelloffene Software für die Texterkennung.
-Für den Einsatz in der Anwendung müssen diese Evaluiert werden.
+Für den Einsatz in der Anwendung müssen diese Anwendungen evaluiert werden.
 Eine korrekte Evaluierung ist nicht einfach,
-da viele Methoden mit trainierten Erkennungsmodellen weitaus besser Erkennungsraten erreichen.
+da viele Methoden mit trainierten Erkennungsmodellen weitaus bessere Erkennungsraten erreichen.
 
 Nicht die Entwicklung sondern die Anpassung von OCR-Methoden stellt hier die eigentliche Arbeit dar.
 
@@ -60,50 +60,51 @@ Quelloffene Software ist in den meisten Fällen nicht nur kostenlos, sondern auc
 
 
 ### Strukturierung und Validierung der Texte
-Die Texte werden Klassifiziert und nach Entitäten durchsucht.
+Die Texte werden klassifiziert und nach Entitäten durchsucht.
 Eine Klassifizierung (z.B.: nach Medienart, Art des Werkes, ...) soll eine Retrokonversion erleichtern.
 Die Klassifizierung von Karten kann auch für die Faceted Navigation genutzt werden.
 
 Die GND wird genutzt um Inhalte zu validieren und zu normalisieren.
 Andere Datenbankenquellen werden zur Verbesserung der allgemeinen Quallität eingebunden.
-Beispielsweise: WIKIDATA oder MusicBrainz!
+Beispielsweise: Wikidata oder MusicBrainz.
 
 ###Externe Datenquellen
 
-Externe Datenquellen bieten ihre Daten in verschiedensten Formaten an, weshalb alle Formate in ein eigenes Datenformat aufgelöst werden müssen, damit diese für das Projekt bereitstehen. Diese sollten optimaler Weise in eine Datenbank geschrieben werden um dauerhaft zur Verfügung zu stehen.
+Externe Datenquellen bieten ihre Daten in verschiedensten Formaten an, weshalb alle Formate in ein eigenes Datenformat aufgelöst werden müssen, damit diese für das Projekt bereitstehen. Diese sollten optimalerweise in eine Datenbank geschrieben werden um dauerhaft zur Verfügung zu stehen.
 
 ## Verarbeitungsprozess
-Die Verarbeitung einer einzelnen Karteikarte unterliegt einem Mehrstufigen System um die Qualität von Stufe zu Stufe zu erhöhen.
+Die Verarbeitung einer einzelnen Karteikarte unterliegt einem mehrstufigen System um die Qualität von Stufe zu Stufe zu erhöhen.
 Jeder Prozess muss in einer Datenbank vermerkt werden, um zusätzliche Informationen hinzuzufügen. Dafür sollen alle Stufen ihre spezifischen Merkmale anhängen, um eine evtl. nötige Sichtung möglich zu machen.
 
 #### Stufe 1:
-OCR Erkennung des Textes, optimaler Weise in Sektoren aufgeteilt oder in einer einzelnen .txt Datei.
+OCR-Erkennung des Textes, optimaler Weise in Sektoren aufgeteilt oder in einer einzelnen .txt Datei.
 
 #### Stufe 2: 
-Überprüfung der Signatur mit vorhandenen und bekannten Mustern um Fehlerkennung möglichst auszuschließen. Signaturen die diese Überprüfung nicht bestehen müssen makiert werden.
+Überprüfung der Signatur mit vorhandenen und bekannten Mustern um Fehlerkennung möglichst auszuschließen. Signaturen die diese Überprüfung nicht bestehen müssen markiert werden.
 
 #### Stufe 3: 
-Autoren, Komponisten die im Headerbreich vermerkt sind können gegen Informationseinheiten validiert werden, um zu prüfen ob ein Zusammenhang zwischen Erkennung und realen Personen besteht. Sind keine Daten zu finden, soll dies vermerkt werden.
+Autoren und Komponisten, die im Headerbreich vermerkt sind können gegen Informationseinheiten validiert werden, um zu prüfen, ob ein Zusammenhang zwischen Erkennung und realen Personen besteht. Sind keine Daten zu finden, soll dies vermerkt werden.
 
 #### Stufe 4: 
-Verarbeiten des Textes: Der Text kann Merkmale zu seinen Komponisten und Werksnamen enthalten, sowie verschiedenste Stickpunkte. Diese müssen separiert werden, und können dann ebenfalls gegen externe Quellen validiert werden.
+Verarbeiten des Textes: Der Text kann Merkmale zu seinen Komponisten und Werksnamen enthalten, sowie verschiedenste Stichpunkte. Diese müssen separiert werden, und können dann ebenfalls gegen externe Quellen validiert werden.
 
 ####Stufe 5: 
 Aufbereiten der erfassten Daten zur Überprüfung bei nicht bestandenen Validierungen
 
 ### Datenhaltung und Server
-Eine Umsetzung als Webservice mit Weboberfläche (HTML und JS) bereitgestellt durch eine
-Java-REST-Server bietet sich aufgrund der Kenntnisse im Team an. (?)
+Eine Umsetzung als Webservice mit Weboberfläche (HTML5, CSS und JS), bereitgestellt durch einen
+Java(?)-REST-Server bietet sich aufgrund der Kenntnisse im Team an. 
 
 Alle Daten sollten in einem Datenaustauschformat verfügbar sein.
 Dies soll eine Integration in andere Services der Staatsbibliothek erleichtern.
 
 ## TODO: Zeitplanung, Milestones, Arbeitspakete
+pending.
 
 ### OCR
-Testdaten ist nötig um verschiedene OCR-Systeme zu vergleichen.
+Testdaten sind nötig um verschiedene OCR-Systeme zu vergleichen.
 Die Erstellung von Trainingsdaten ist ein weitaus größerer Aufwand,
-da modernere Verfahren ( aus dem Bereich Maschinen Lernen) grosse Mengen benötigen. 
+da modernere Verfahren (aus dem Bereich Maschinenlernen) grosse Mengen benötigen. 
 ### Semantische Analyse
 ### Datenbank
 
