@@ -16,13 +16,13 @@ unterstützen und für Nutzer verfügbar sein.
 
 ## Die alphabetischen Imagekataloge der Musikabteilung
 
-Siehe [Texterkennung.md](/Datenanalyse.md).
+Siehe [Datenanalyse](/Datenanalyse.md).
 
 ## Anwendungsdetails
 ![Prozessübersicht](/bilder/grobkonzept2.jpg)
 
 ### OCR
-Siehe [Texterkennung.md](/Texterkennung.md).
+Siehe [Texterkennung](/Texterkennung.md).
 
 ### Strukturierung und Klassifizierung der Daten
 Die Analyse mit OCR-Sofware gibt uns lediglich Aufschluss über den
