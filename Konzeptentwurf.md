@@ -4,7 +4,7 @@
 
 Im Rahmen des Masterprojektes an der HTW Berlin entsteht in Zusammenarbeit mit der Staatsbibliothek zu Berlin, ein mehrstufiges Forschungsprojekt, im Bereich Texterkennung und Verarbeitung.
 Hierfür sollen, die Musikkataloge der Bibliothek, die bisher vor allem aus fotografierten Karteikarten bestehen, umfassend digitalisiert werden.
-Das Projekt wird von vier Studenten, Herrn Simon Albrecht, Herrn  Jakob Schmolling, Herrn Görisch und Herrn Zellhöfer  als Ansprechpartner für die Staatsbibliothek, geführt.
+Das Projekt wird von vier Studenten, Herrn Simon Albrecht, Herrn Jakob Schmolling, Herrn Lars Görisch und Herrn Zellhöfer  als Ansprechpartner für die Staatsbibliothek, geführt.
 
 ## Projektumschreibung
 
