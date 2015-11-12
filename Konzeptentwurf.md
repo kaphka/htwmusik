@@ -1,5 +1,11 @@
 # Konzept
 
+## Vorwort
+
+Im Rahmen des Masterprojektes an der HTW Berlin entsteht in Zusammenarbeit mit der Staatsbibliothek zu Berlin, ein mehrstufiges Forschungsprojekt, im Bereich Texterkennung und Verarbeitung.
+Hierfür sollen, die Musikkataloge der Bibliothek, die bisher vor allem aus fotografierten Karteikarten bestehen, umfassend digitalisiert werden.
+Das Projekt wird von vier Studenten, Herrn Name 1, Herrn  Name 2, Herrn Görisch, Herrn Name 4 und Herrn Zöllner  als Ansprechpartner für die Staatsbibliothek, geführt.
+
 ## Aufgabenstellung
 
 Kernaufgabe der Anwendung(en) ist die
