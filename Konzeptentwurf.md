@@ -62,6 +62,20 @@ Die Klassifizierung von Karten kann auch für die Faceted Navigation genutzt wer
 Die GND wird genutzt um Inhalte zu validieren und zu normalisieren.
 Andere Datenbanken werden genutzt um die 
 
+## Verarbeitungsprozess
+Die Verarbeitung einer einzelnen Karteikarte unterliegt einem Mehrstufigen System um die Qualität von Stufe zu Stufe zu erhöhen.
+Jeder Prozess muss in einer Datenbank vermerkt werden, um zusätzliche Informationen hinzuzufügen. Dafür sollen alle Stufen ihre spezifischen Merkmale anhängen, um eine evtl. nötige Sichtung möglich zu machen.
+
+#### Stufe 1: OCR Erkennung des Textes, optimaler Weise in Sektoren aufgeteilt oder in einer einzelnen .txt Datei.
+
+#### Stufe 2: Überprüfung der Signatur mit vorhandenen und bekannten Mustern um Fehlerkennung möglichst auszuschließen. Signaturen die diese Überprüfung nicht bestehen müssen makiert werden.
+
+#### Stufe 3: Autoren, Komponisten die im Headerbreich vermerkt sind können gegen Informationseinheiten validiert werden, um zu prüfen ob ein Zusammenhang zwischen Erkennung und realen Personen besteht. Sind keine Daten zu finden, soll dies vermerkt werden.
+
+#### Stufe 4: Verarbeiten des Textes: Der Text kann Merkmale zu seinen Komponisten und Werksnamen enthalten, sowie verschiedenste Stickpunkte. Diese müssen separiert werden, und können dann ebenfalls gegen externe Quellen validiert werden.
+
+####Stufe 5: Aufbereiten der erfassten Daten zur Überprüfung bei nicht bestandenen Validierungen
+
 ### Datenhaltung und Server
 Eine Umsetzung als Webservice mit Weboberfläche (HTML und JS) bereitgestellt durch eine
 Java-REST-Server bietet sich aufgrund der Kenntnisse im Team an. (?)
