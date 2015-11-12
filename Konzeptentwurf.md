@@ -65,7 +65,8 @@ Eine Klassifizierung (z.B.: nach Medienart, Art des Werkes, ...) soll eine Retro
 Die Klassifizierung von Karten kann auch für die Faceted Navigation genutzt werden.
 
 Die GND wird genutzt um Inhalte zu validieren und zu normalisieren.
-Andere Datenbanken werden genutzt um die 
+Andere Datenbankenquellen werden zur Verbesserung der allgemeinen Quallität eingebunden.
+Beispielsweise: WIKIDATA oder MusicBrainz!
 
 ###Externe Datenquellen
 
