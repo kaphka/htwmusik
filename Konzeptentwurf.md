@@ -3,7 +3,7 @@
 ## Aufgabenstellung
 
 Kernaufgabe der Anwendung(en) ist die
-Gewinnung von strukturierten Daten aus dem Katalogs der Musikabteilung.
+Gewinnung von strukturierten Daten aus dem Katalog der Musikabteilung.
 
 Diese Daten sollen die Retrokonversion des Katalogs
 unterstützen und für Nutzer verfügbar sein.
@@ -71,3 +71,12 @@ Die Erstellung von Trainingsdaten ist ein weitaus größerer Aufwand,
 da modernere Verfahren ( aus dem Bereich Maschinen Lernen) grosse Mengen benötigen. 
 ### Semantische Analyse
 ### Datenbank
+
+	Vermutlich bietet es sich an, nicht mit klassischen RDBMs sondern eher mit NoSQL-Datenbanken wie MongoDB oder Apache Cassandra zu arbeiten.
+	Daten zum Abgleich mit bereits bekannten Daten sollten aus Performancegruenden in einem Key-Value-Store wie Redis gehalten werden.
+
+#### TODOS:
+	* Installieren und evaluieren von MongoDB / Cassandra
+	* Installation und Evaluation von Redis
+	* Anbindung der OCR an die oben genannten Systeme
+	* Anbindung der geplanten Web-Applikation an o.g. Systeme
