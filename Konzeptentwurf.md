@@ -62,6 +62,10 @@ Die Klassifizierung von Karten kann auch für die Faceted Navigation genutzt wer
 Die GND wird genutzt um Inhalte zu validieren und zu normalisieren.
 Andere Datenbanken werden genutzt um die 
 
+###Externe Datenquellen
+
+Externe Datenquellen bieten ihre Daten in verschiedensten Formaten an, weshalb alle Formate in ein eigenes Datenformat aufgelöst werden müssen, damit diese für das Projekt bereitstehen. Diese sollten optimaler Weise in eine Datenbank geschrieben werden um dauerhaft zur Verfügung zu stehen.
+
 ## Verarbeitungsprozess
 Die Verarbeitung einer einzelnen Karteikarte unterliegt einem Mehrstufigen System um die Qualität von Stufe zu Stufe zu erhöhen.
 Jeder Prozess muss in einer Datenbank vermerkt werden, um zusätzliche Informationen hinzuzufügen. Dafür sollen alle Stufen ihre spezifischen Merkmale anhängen, um eine evtl. nötige Sichtung möglich zu machen.
