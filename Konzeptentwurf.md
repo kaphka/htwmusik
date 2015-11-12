@@ -6,6 +6,11 @@ Im Rahmen des Masterprojektes an der HTW Berlin entsteht in Zusammenarbeit mit d
 Hierfür sollen, die Musikkataloge der Bibliothek, die bisher vor allem aus fotografierten Karteikarten bestehen, umfassend digitalisiert werden.
 Das Projekt wird von vier Studenten, Herrn Name 1, Herrn  Name 2, Herrn Görisch, Herrn Name 4 und Herrn Zöllner  als Ansprechpartner für die Staatsbibliothek, geführt.
 
+## Projektumschreibung
+
+Die Staatsbibliothek zu Berlin, unterhält ein umfassendes Musikarchiv, mit vielen Werken aus vergangener und heutiger Zeit. Diese werden seit dem Bestehen der Bibliothek auf Karteikarten festgehalten und gesammelt. Der Umfang bemisst sich derzeit auf rund eine Million Karten, die in diesem Projekt in das digitale Archiv und Katalogsystem überführt werden sollen. Aufgrund der Anzahl, wäre eine Digitalisierung durch analoges menschliches Erfassen sehr aufwändig.
+Deshalb soll mithilfe von OCR-Software die im TIFF-Format vorliegenden abfotografierten Karteikarten digitalisiert werden. Dafür müssen verschiedene Mechanismen implementiert werden, die die OCR-Ergebnisse überprüfen und validieren können.
+
 ## Aufgabenstellung
 
 Kernaufgabe der Anwendung(en) ist die
