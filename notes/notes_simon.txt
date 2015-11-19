@@ -1,0 +1,47 @@
+TODO: Use cases fuer die Applikation modellieren
+    - OCR 
+    - Login 
+    - Listenansicht 
+    - Einzelansicht 
+    - Korrektur 
+    - Bestaetigung / Ablehnung einer einzelnen Karte
+    - Abgleich mit Wikidata und Aehnlichem 
+    
+    
+TODO: Mockup des Frontends bauen?
+    => Lars?
+    
+TODO: Entscheidungsmatrix fuer Technik-Stack
+
+TODO: Arbeitspakete + Zeitplanung bis naechste Woche definieren
+    - OCR implementieren + Dokumentieren
+    - OCR Training
+    - Planung Frontend + grobe Implementierung als Prototyp/Mockup
+    - Planung Backend / Service-Infrastruktur
+    - Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich fuer die OCR-Texte
+    - Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service
+    - Prototypen fuer einzelne Komponenten
+    
+    - Praesentation erstellen, 12.02. Praesentation
+    - Dokumentation laeuft parallel zur jeweiligen Bearbeitung der Pakete
+    
+TODO: Frageliste an die IT-Abteilung der Staatsbibliothek bzgl. Technik-Stack
+    - Wie sieht der Technik-Stack der StaBi generell aus?
+    - Limitierungen? 
+    - Welche Sprachen / Software duerfen auf keinen Fall eingesetzt werden?
+    
+TODO: Limitierungen und Chancen des Trainingsansatzes dokumentieren 
+    - Jakob
+TODO: Flussdiagramme fuer Arbeitspakete
+    - yed nutzen
+    
+TODO: Datenhalde auf GitHub einrichten => Links zur Dokumentation Elasticsearch usw.
+TODO: Wochenberichte auf GitHub
+
+yedit
+
+mehrere OCR-Engines auf die Bilddaten anwenden?
+Pooling-Methodik
+
+openrefine
+
