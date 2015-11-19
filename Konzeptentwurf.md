@@ -105,7 +105,7 @@ Dies soll eine Integration in andere Services der Staatsbibliothek erleichtern.
     - Planung Backend / Service-Infrastruktur 2 Wochen KW 48 - 50
     - Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich fuer die OCR-Texte 1 Woche KW 1
     - Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service 2 Wochen KW 2 - 3
-    - Prototypen fuer einzelne Komponenten s.o. Zusammenhang
+    - Prototypen fuer einzelne Komponenten bzw Vorbereitung REST o.ä. s.o. Zusammenhang
     - Vorbereitung Messe 12.2 1-2 Wochen KW 5 -6
 
 ### OCR
