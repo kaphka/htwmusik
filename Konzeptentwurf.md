@@ -99,7 +99,13 @@ Alle Daten sollten in einem Datenaustauschformat verfügbar sein.
 Dies soll eine Integration in andere Services der Staatsbibliothek erleichtern.
 
 ## TODO: Zeitplanung, Milestones, Arbeitspakete
-pending.
+    - OCR implementieren + Dokumentieren
+    - OCR Training
+    - Planung Frontend + grobe Implementierung als Prototyp/Mockup
+    - Planung Backend / Service-Infrastruktur
+    - Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich fuer die OCR-Texte
+    - Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service
+    - Prototypen fuer einzelne Komponenten
 
 ### OCR
 Testdaten sind nötig um verschiedene OCR-Systeme zu vergleichen.
