@@ -117,11 +117,12 @@ da modernere Verfahren (aus dem Bereich Maschinenlernen) grosse Mengen benötige
 ### Semantische Analyse
 ### Datenbank
 
-	Vermutlich bietet es sich an, nicht mit klassischen RDBMs sondern eher mit NoSQL-Datenbanken wie MongoDB oder Apache Cassandra zu arbeiten.
-	Daten zum Abgleich mit bereits bekannten Daten sollten aus Performancegruenden in einem Key-Value-Store wie Redis gehalten werden.
+Vermutlich bietet es sich an, nicht mit klassischen RDBMs sondern eher mit NoSQL-Datenbanken wie MongoDB oder Apache Cassandra zu arbeiten.
+Daten zum Abgleich mit bereits bekannten Daten sollten aus Performancegruenden in einem Key-Value-Store wie Redis gehalten werden.
 
 #### TODOS:
-	* Installieren und evaluieren von MongoDB / Cassandra
-	* Installation und Evaluation von Redis
-	* Anbindung der OCR an die oben genannten Systeme
-	* Anbindung der geplanten Web-Applikation an o.g. Systeme
+
+* Installieren und evaluieren von MongoDB / Cassandra
+* Installation und Evaluation von Redis
+* Anbindung der OCR an die oben genannten Systeme
+* Anbindung der geplanten Web-Applikation an o.g. Systeme
