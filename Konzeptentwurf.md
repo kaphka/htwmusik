@@ -106,7 +106,8 @@ OCR implementieren + Dokumentieren  | 2 Wochen | KW: 48 - 50
 OCR Training  | 4 Wochen | KW 50 - 3
 Planung Frontend + grobe Implementierung als Prototyp/Mockup  | 1 Woche | KW 47 - 48
 Planung Backend / Service-Infrastruktur  | 2 Wochen | KW: 48 - 50
-Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich fuer die OCR-Texte  | 1 Woche | KW: 1 Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service  | 2 Wochen | KW 1 - 3
+Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich fuer die OCR-Texte  | 1 Woche | KW: 1
+Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service  | 2 Wochen | KW 1 - 3
 Prototypen fuer einzelne Komponenten bzw Vorbereitung REST o.ä. s.o. Zusammenhang  | ... | ...
 Vorbereitung Messe 12.2  | 1 -2 Wochen | KW 5 -6
 ### OCR
