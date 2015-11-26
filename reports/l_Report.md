@@ -6,4 +6,6 @@ Report L.
 | 01 | 24.10 - 30.10 | Projektentwicklung und Allg Ideensammlung |  Tesseract OCRInstalliert und an Beispieldaten getestet
 | 02 | 31.10 - 06.11 | x | Konzeptzeichnungen und Kartenerfassung per Hand (Testdaten)
 | 03 | 07.11 - 13.11 | Konzeptbesprechung | Konzeptentwurf(Text), Skype meeting Konzeptionszusammenführung, Ideenentwicklung Aufbau des Projektes
-| 04 | 14.11 - 20.11 | --- | Entwicklung List und Edit mookup(Webpage), Besprechung Herangehensweise, Arbeitspaketplanung und Zeitschätzung
+| 04 | 14.11 - 20.11 | Mookups besprochen und Rails Prototypen | Entwicklung List und Edit mookup(Webpage), Besprechung Herangehensweise, Arbeitspaketplanung und Zeitschätzung
+| 05 | 21.11 - 27.11 | --- | Datenmodell konzeptioniert(muss das noch von Papier auf  Digital bannen)
+
