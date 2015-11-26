@@ -16,3 +16,9 @@
 
 - Wörterbuch für OCR aus dem PDF rak_musik_2003 erstellt 
 - Anwendung von Tesseract auf Testset
+
+## 21.11 - 27.11
+- Tesseract mit neuen Wörterbuch testen
+- Erkennung auf Segmenten zur besseren Vergleichbarkeit
+- Prototyp einer REST-Anwendung zur Erstellung von ground truth Daten
+- Einarbeitung in ocropy preprocessing Parameter 
