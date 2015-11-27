@@ -55,3 +55,8 @@ Die versprochenen Links für die einzelnen Aufgabengebiete werde ich nach und na
 * Implementierung einer internen Web-Anwendung, welche die Bearbeitung und Exploration der erzeugten Daten ermöglicht
 
 Für die Staatsbibliothek zu Berlin hat das Projekt einen deutlich experimentellen, forschungsnahen Charakter, d.h. dass uns bewusst ist, welche Probleme gerade die Erkennung von handgeschriebenen Katalogzetteln bereitet. Um trotzdem alle vier Aufgabengebiete bearbeiten zu können, bietet es sich deshalb an, zuerst mit maschinengeschriebenen Katalogzetteln zu beginnen und sich dann nach und nach an die komplizierten Zettel heranzuwagen.
+
+# Interessante Links
+
+* Engagement der SBB beim ALTO-Format (relevant für die OCR): http://blog.sbb.berlin/sbb-alto-board/
+* Interessantes Tool zur Datenanalyse: http://openrefine.org/
