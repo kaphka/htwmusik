@@ -22,3 +22,10 @@
 - Erkennung auf Segmenten zur besseren Vergleichbarkeit
 - Prototyp einer REST-Anwendung zur Erstellung von ground truth Daten
 - Einarbeitung in ocropy preprocessing Parameter 
+
+## 28.11 - 3.12
+- Prototyp der OCR-Webapp weiter bearbeitet
+- Karten mit dem Prototyp abgschrieben und ground truth erhalten
+- Fehlerrate liegt für tesseract bei 7.814 %
+- Hilfsfunktionen geschrieben um Ergebnisse hin und her zu kopieren und an das Format von ocropy 
+anzupassen (Verzeichnisstruktur)

@@ -17,12 +17,9 @@ Ocropy und Tesseract nutzen hOCR: https://de.wikipedia.org/wiki/HOCR_(Standard)
 PAGE XML (http://www.primaresearch.org/tools.php)
 
 ## Unterschiedliche Dokumenttypen
-* Was könnte sich auf der Karte befinden? Trenner, Schreibmaschinenschrift, Korrekturen, Handschriften
-* Testset: Kartenid -> Kartentyp
-
-## Kategorisierung von Segmenten
-Ist die Erkennung von Korrekturen, Stempeln, Unterstreichungen hilfreich?
-
+Eine Kategorisierung der Karten nach verwendeter Schrift wird wahrscheinlich eine wichter
+Punkt bei der Texterkennung sein. Im Katalog 2 gibt es zwar nur wenige Schrifttypen, 
+aber der Katalog 1 hat Karten mit sehr unterschiedlichen Handschriften und Schreibmaschinenschriften.
 
 ## Durchführung
 ![Durchführung](/bilder/ocr-detail-entwurf.jpg)
