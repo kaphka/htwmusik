@@ -1,6 +1,6 @@
 # Übersicht
 
-Hinzugefügrte Gems mit verweisen und kurzer Erläuterung
+Hinzugefügte Gems mit Verweisen und kurzer Erläuterung
 
 ## Search Cop
 Erweitert die Suche nach Objekten um eine Full Text Engine
