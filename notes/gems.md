@@ -1,6 +1,7 @@
 # Übersicht
 
-Hinzugefügte Gems mit Verweisen und kurzer Erläuterung
+Hinzugefügte Gems mit Verweisen und kurzer Erläuterung.
+Testprojekt https://github.com/albrechtsimon/elasticsearchtest
 
 ## Search Cop
 Erweitert die Suche nach Objekten um eine Full Text Engine
