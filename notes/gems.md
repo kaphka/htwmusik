@@ -44,3 +44,7 @@ https://rubygems.org/gems/devise
 Einfaches bauen vom komplexen Json
 
 https://github.com/rails/jbuilder
+
+## Better errors
+Angenehmere Error Pages
+https://github.com/charliesome/better_errors
