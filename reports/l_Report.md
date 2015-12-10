@@ -8,5 +8,8 @@ Report L.
 | 03 | 07.11 - 13.11 | Konzeptbesprechung | Konzeptentwurf(Text), Skype meeting Konzeptionszusammenführung, Ideenentwicklung Aufbau des Projektes
 | 04 | 14.11 - 20.11 | Mookups besprochen und Rails Prototypen | Entwicklung List und Edit mookup(Webpage), Besprechung Herangehensweise, Arbeitspaketplanung und Zeitschätzung
 | 05 | 21.11 - 27.11 | Gespräch mit Entwickler der SB | Datenmodell konzeptioniert(muss das noch von Papier auf  Digital bannen)
-| 06 | 28.11 - 4.11 | --- | Vagrant installation, Ruby update, testprojekt aufgesetzt, Recherche und implementation von Gems für das Projekt, mehr Informationen -> [Link](https://github.com/kaphka/htwmusik/blob/master/notes/gems.md) TODO: Mehr Gems!
+| 06 | 28.11 - 4.12 | --- | Vagrant installation, Ruby update, testprojekt aufgesetzt, Recherche und implementation von Gems für das Projekt, mehr Informationen -> [Link](https://github.com/kaphka/htwmusik/blob/master/notes/gems.md) TODO: Mehr Gems!
+| 07 | 5.12 - 11.12 | --- | Neues rails Projekt übernommen, example View für [Link](https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png) mit controller testdaten gebaut
+
+
 
