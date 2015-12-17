@@ -10,6 +10,7 @@ Report L.
 | 05 | 21.11 - 27.11 | Gespräch mit Entwickler der SB | Datenmodell konzeptioniert(muss das noch von Papier auf  Digital bannen)
 | 06 | 28.11 - 4.12 | --- | Vagrant installation, Ruby update, testprojekt aufgesetzt, Recherche und implementation von Gems für das Projekt, mehr Informationen -> [Link](https://github.com/kaphka/htwmusik/blob/master/notes/gems.md) TODO: Mehr Gems!
 | 07 | 5.12 - 11.12 | --- | Neues rails Projekt übernommen, example View für [Link](https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png) mit controller testdaten gebaut
+| 08 | 12.12 - 17.12 | --- | model processstate, grid integriert, listview für process entities, routen und click dummy verknüpfung
 
 
 
