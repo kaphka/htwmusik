@@ -22,8 +22,16 @@ Punkt bei der Texterkennung sein. Im Katalog 2 gibt es zwar nur wenige Schriftty
 aber der Katalog 1 hat Karten mit sehr unterschiedlichen Handschriften und Schreibmaschinenschriften.
 
 ## Durchführung
-![Durchführung](/bilder/ocr-detail-entwurf.jpg)
-### Trainingsdaten erstellen
+![Durchführung](/bilder/ocr-pipeline.jpg)
+
+
+### Vorverarbeitung der Kataloge
+Einige OCR-Programme verwenden eine sehr flache Orderstruktur (Buch(Order) -> Seiten (Scans der Seiten).
+Deswegen wird der Imagekatalog in diese Form gebracht, dabei wird jedes Bild als PNG gespeichert (~25% des urprünglichen Speicherbedarfs ) und die Fusszeile wird entfernt.
+Auf jeder Karte befindet sich ein Loch für die Befästigung im Katalogkasten. Bei der Segementierung enstehen dann Artefakte, welche das trainieren von Modellen erschweren. 
+(TODO: Mit Hough-Transformation erkennen und Entfernen)
+
+### Test- und Trainingsdatenerstellung
 OCR für alle Karten anwenden
 Möglichkeiten um mehr Trainingsdaten zu erhalten:
 * Die Arbeit des manuelles Korrigieren und Kategorisieren verteilen (Webapp im Stil von Mechanical Turk?)
@@ -34,10 +42,22 @@ Möglichkeiten um mehr Trainingsdaten zu erhalten:
 csv-Datei für Kartenkategorie
 .gt.txt-Datei pro Textzeile oder csv mit allen Segmenten + Text
 
+Die Erzeugung von syntetischen Daten ist auch möglich, da schon ähnliche Datensätze gibt.
+Aus Datenbank mit Autoren, Werktiteln und Abkürzungen können auch Textzeilen erzeugt werden.  
+
 Aufteilen der Daten in Trainings- und Testset (70:30 Split)
 
-### OCR trainieren
+### machinelles Lernen
 Evaluierne von:
 * https://github.com/tesseract-ocr
 * https://github.com/tmbdev/ocropy
 * https://github.com/tmbdev/clstm
+* ...
+
+
+### Anwendung der OCR auf den Datenbestand
+Die Arbeitsschritte der OCR werden über Skripte festgelegt. 
+Zusätzlich zum Textinhalt wird die Position jeder Textzeile gespeichert. 
+Das Extrahieren der Mediensignatur wird dadürch wesentlich erleichtert (die Signatur ist immer oben rechts auf der Karte). 
+Bei der Retrokonversion werden werden die Ergebnisse korrigiert.
+Diese können dann wieder in das Trainingsset eingebunden werden.
