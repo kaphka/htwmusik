@@ -48,3 +48,6 @@ https://github.com/rails/jbuilder
 ## Better errors
 Angenehmere Error Pages
 https://github.com/charliesome/better_errors
+
+## Form builder mit Bootstrap-Integration
+https://github.com/bootstrap-ruby/rails-bootstrap-forms
