@@ -29,3 +29,11 @@
 - Fehlerrate liegt für tesseract bei 7.814 %
 - Hilfsfunktionen geschrieben um Ergebnisse hin und her zu kopieren und an das Format von ocropy 
 anzupassen (Verzeichnisstruktur)
+
+## 4.12.2015 - 7.1.2016
+- OCR-Webapp Textdarstellung gefixt
+- wieder versucht clstm zu kompilieren
+- Docker ausprobiert, da manche OCR-Software ziemlich spezifische Bibliotheken und Konfigurationen brauchen
+- Training eines OCR-Modells mit ocropy (eher nur ausprobiert, da zu wenig Daten)
+- OCR-Diagramm erweitert: Vorverarbeitung der Daten, Datenpipeline 
+
