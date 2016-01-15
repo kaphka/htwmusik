@@ -12,5 +12,6 @@ Report L.
 | 07 | 5.12 - 11.12 | --- | Neues rails Projekt übernommen, example View für [Link](https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png) mit controller testdaten gebaut
 | 08 | 12.12 - 17.12 | --- | model processstate, grid integriert, listview für process entities, routen und click dummy verknüpfung
 | 09 | 01.01 - 08.01 | --- | click dummy fixtures integration, fixtures creation, fixture data process state, dynamic templates process entry, neue entitys für felder, gruppe, karten, und bilder
+| 10 | 09.01 - 15.01 | --- | css styling angepasst auf webseitne farben nach schema und ideen, logos integriert,popover integriert, error messages implementiert
 
 
