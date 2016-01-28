@@ -14,5 +14,6 @@ Report L.
 | 09 | 01.01 - 08.01 | --- | click dummy fixtures integration, fixtures creation, fixture data process state, dynamic templates process entry, neue entitys für felder, gruppe, karten, und bilder
 | 10 | 09.01 - 15.01 | --- | css styling angepasst auf webseitne farben nach schema und ideen, logos integriert,popover integriert, error messages implementiert
 | 11 | 16.01 - 21.01 | --- | popover html integration, progress bar und status berechnung , form an simons wochenarbeit angepasst
+| 12 | 17.01 - 28.01 | --- | fake daten für karte und popover, erweiterung der entites um komposition(worddokument), dataprovider, korrektur informationsdaten, umbau der ocr suggestion in eigene types
 
 
