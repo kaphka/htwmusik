@@ -1,9 +1,9 @@
 # Erschließungs- und Visualisierungswerkzeuge für den Imagekatalog der Musikabteilung der Staatsbibliothek zu Berlin
 
-Das hier vorgestellte Projekt ist eine Zusammenarbeit der Staatsbibliothek zu Berlin und der HTW Berlin. 
+Das hier vorgestellte Projekt, ist eine Zusammenarbeit der Staatsbibliothek zu Berlin und der HTW Berlin. 
 Das Projekt wird von drei Studenten, Herrn Simon Albrecht, Herrn Jakob Schmolling, Herrn Lars Görisch und Herrn Zellhöfer, als Ansprechpartner für die Staatsbibliothek, geführt.
-Das Ziel des Projekts ist die
-Gewinnung von strukturierten Daten aus dem Katalog der Musikabteilung.
+Das Ziel des Projekts, ist die
+Gewinnung von strukturierten Daten, aus dem Katalog der Musikabteilung.
 Diese Daten sollen die Retrokonversion des Katalogs
 unterstützen und spater auch für Nutzer verfügbar sein.
 
@@ -11,12 +11,12 @@ unterstützen und spater auch für Nutzer verfügbar sein.
 
 Die Staatsbibliothek zu Berlin unterhält ein umfassendes Musikarchiv, mit vielen Werken aus vergangener und heutiger Zeit.
 Diese werden seit dem Bestehen der Bibliothek auf Karteikarten festgehalten und gesammelt.
-Karteikarten werden seit dem 1800 geführt und unterscheiden sich deshalb stark in ihrer Form. 
+Diese werden seit dem 1800 geführt und unterscheiden sich deshalb stark in ihrer Form. 
 Der Umfang bemisst sich derzeit auf rund eine Million Karten, die in diesem Projekt in das digitale Archiv und Katalogsystem überführt werden sollen.
 
 Die Katalogkarten der Musikabteilung wurden mit einer Auflösung von 200dpi gescannt und
 liegen im TIF-Format vor.
-Für einen kleinen Teil der Karten gibt es zudem eine manuell erstellen Indexierung.
+Für einen kleinen Teil der Karten, gibt es zudem eine manuell erstellen Indexierung.
 Die Textform und Schrift variiert stark nach Zeit und Bibliothekar. So sind Karten in Handschrift, Schreibmaschine oder Computertext geschrieben.
 Zudem sind die Einträge mehrsprachig (Deutsch, Englisch, Französisch, Tschechisch, ...).
 
@@ -43,14 +43,14 @@ der Karten in verschiedene Klassen (unterschiedliche Handschriften, Schreibmachi
 
 ### Gewinnung von strukturierter Information
 
-Etwa 5% der Buchstaben in den Texten die von unserer OCR erzeugt werden sind falsch.
+Etwa 5% der Buchstaben in den Texten, die von unserer OCR erzeugt werden, sind falsch.
 Das erschwert die Tokenisierung und Erkennung von Wörtern zusätzlich.
-Für das Auffinden von Entitäten muss somit eine Methode gefunden werden die damit umgehen kann.
+Für das Auffinden von Entitäten, muss somit eine Methode gefunden werden die damit umgehen kann.
 
 Die GND (Gemeinsame Normdatei) wird genutzt um Inhalte zu validieren und zu normalisieren. Andere Datenbankenquellen werden zur Verbesserung der Ergebnisse eingebunden. Beispielsweise: Wikidata oder MusicBrainz.
 
 ### Webinterface 
 
-Im Prototyp der Weboberfläche können alle Daten eingegeben werden, die für einen korrekten Eintrag im Katalog der Staatsbibliothek nötig sind.
-Die Erkennung von Autor, Werk, etc. soll im Verlauf des 2. Semester automatisiert werden.
-Jedoch eignet sich die Anwendung schon jetzt zur Erstellung von Traingsdaten (für maschinelles Lernen).
+Im Prototyp der Weboberfläche, können alle Daten eingegeben werden, die für einen korrekten Eintrag im Katalog der Staatsbibliothek nötig sind.
+Die Erkennung von Autor, Werk, etc. soll im Verlauf des 2. Semester automatisiert werden,
+jedoch eignet sich die Anwendung schon jetzt zur Erstellung von Traingsdaten (für maschinelles Lernen).
