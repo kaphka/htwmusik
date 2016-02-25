@@ -11,6 +11,7 @@ Textinhalt jeder Karte( und jedes Kartensegments)
 Abbleich mit korrigierten Daten ("ground truth").
 
 # Probleme
+
 ## Datenformat
 Formate und Konvetionen können sich je nach Tool unterscheiden.
 Ocropy und Tesseract nutzen hOCR: https://de.wikipedia.org/wiki/HOCR_(Standard)
@@ -22,7 +23,8 @@ Punkt bei der Texterkennung sein. Im Katalog 2 gibt es zwar nur wenige Schriftty
 aber der Katalog 1 hat Karten mit sehr unterschiedlichen Handschriften und Schreibmaschinenschriften.
 
 ## Durchführung
-![Durchführung](/bilder/ocr-pipeline.jpg)
+
+![Durchführung](bilder/ocr-pipeline.jpg)
 
 
 ### Vorverarbeitung der Kataloge

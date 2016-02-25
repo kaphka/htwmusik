@@ -5,7 +5,7 @@ Das Projekt wird von drei Studenten, Herrn Simon Albrecht, Herrn Jakob Schmollin
 Das Ziel des Projekts, ist die
 Gewinnung von strukturierten Daten, aus dem Katalog der Musikabteilung.
 Diese Daten sollen die Retrokonversion des Katalogs
-unterstützen und spater auch für Nutzer verfügbar sein.
+unterstützen und später auch für Nutzer verfügbar sein.
 
 ## Besonderheiten der alphabetischen Imagekataloge der Musikabteilung
 
@@ -15,8 +15,8 @@ Diese werden seit dem 1800 geführt und unterscheiden sich deshalb stark in ihre
 Der Umfang bemisst sich derzeit auf rund eine Million Karten, die in diesem Projekt in das digitale Archiv und Katalogsystem überführt werden sollen.
 
 Die Katalogkarten der Musikabteilung wurden mit einer Auflösung von 200dpi gescannt und
-liegen im TIF-Format vor.
-Für einen kleinen Teil der Karten, gibt es zudem eine manuell erstellen Indexierung.
+liegen im TIF-Format vor. Der uns zu Verfügung stehende Datensatz umfasst etwa 3.4 TB. 
+Für etwa 30.0000 der Karten gibt es zudem einen manuell erstellen Index.
 Die Textform und Schrift variiert stark nach Zeit und Bibliothekar. So sind Karten in Handschrift, Schreibmaschine oder Computertext geschrieben.
 Zudem sind die Einträge mehrsprachig (Deutsch, Englisch, Französisch, Tschechisch, ...).
 
@@ -38,14 +38,13 @@ Die Benutzung der Skripte wurde mithilfe von iPython-Notebooks dokumentiert und 
 
 Aktuelle OCR-Methoden basieren auf überwachten Lernverfahren, dass heißt man 
 benötig Ein-und Ausgabebeispiele in großen Mengen. Daraus können Modelle zur Schrifterkennung erzeugt werden. 
-Aufgrund der größen Varianz in den Daten arbeiten wir an einer Kategorisierung 
-der Karten in verschiedene Klassen (unterschiedliche Handschriften, Schreibmachine, etc.)
+Aufgrund der großen Varianz in den Daten arbeiten wir an einer Kategorisierung 
+der Karten in verschiedene Klassen (unterschiedliche Handschriften, Schreibmaschine, etc.)
 
 ### Gewinnung von strukturierter Information
 
 Etwa 5% der Buchstaben in den Texten, die von unserer OCR erzeugt werden, sind falsch.
 Das erschwert die Tokenisierung und Erkennung von Wörtern zusätzlich.
-Für das Auffinden von Entitäten, muss somit eine Methode gefunden werden die damit umgehen kann.
 
 Die GND (Gemeinsame Normdatei) wird genutzt um Inhalte zu validieren und zu normalisieren. Andere Datenbankenquellen werden zur Verbesserung der Ergebnisse eingebunden. Beispielsweise: Wikidata oder MusicBrainz.
 
@@ -53,4 +52,5 @@ Die GND (Gemeinsame Normdatei) wird genutzt um Inhalte zu validieren und zu norm
 
 Im Prototyp der Weboberfläche, können alle Daten eingegeben werden, die für einen korrekten Eintrag im Katalog der Staatsbibliothek nötig sind.
 Die Erkennung von Autor, Werk, etc. soll im Verlauf des 2. Semester automatisiert werden,
-jedoch eignet sich die Anwendung schon jetzt zur Erstellung von Traingsdaten (für maschinelles Lernen).
+jedoch eignet sich die Anwendung schon jetzt zur Erstellung von Trainingsdaten (für maschinelles Lernen).
+

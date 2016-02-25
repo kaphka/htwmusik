@@ -3,13 +3,15 @@ Die Katalogkarten der Musikabteilung wurden mit einer Aufloesung von 200dpi gesc
 liegen im TIF-Format vor.
 
 # Katalog 1: Musikbücher und Noten I
-![Beispielkarte 1](/bilder/kat1-beispiel-handschrift.jpg)
+![Beispielkarte 1](bilder/kat1-beispiel-handschrift.jpg)
+
 * Mix aus Handschriften, Druckschriften (serifenlos) und Schreibmaschinentext (auch auf einer Karte)
 * Unterschieldliche Papierfarben, liniertes Papier 
 * mehrsprachig
 
 # Katalog 2: Musikbücher und Noten II
-![Beispielkarte 2](/bilder/kat2-beispiel.jpg)
+![Beispielkarte 2](bilder/kat2-beispiel.jpg)
+
 * überwiegend maschinengeschriebene Texte
 * mehrsprachig (viele diakritisches Zeichen z.B:  ǎ)
 * Text kann auf 2 (mehrer?) Karten aufgeteilt sein (Kartennummer meist handschriftlich eingetragen ,

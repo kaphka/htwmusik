@@ -21,13 +21,13 @@ unterstützen und für Nutzer verfügbar sein.
 
 ## Die alphabetischen Imagekataloge der Musikabteilung
 
-Siehe [Datenanalyse](/Datenanalyse.md).
+Siehe [Datenanalyse](Datenanalyse.md).
 
 ## Anwendungsdetails
-![Prozessübersicht](/bilder/grobkonzept2.jpg)
+![Prozessübersicht](bilder/grobkonzept2.jpg)
 
 ### OCR
-Siehe [Texterkennung](/Texterkennung.md).
+Siehe [Texterkennung](Texterkennung.md).
 
 ### Strukturierung und Klassifizierung der Daten
 Die Analyse mit OCR-Sofware gibt uns lediglich Aufschluss über den
@@ -110,11 +110,15 @@ Abkuerzungen (Instrumente usw) aus PDF in irgendeine DB uebertragen zum Abgleich
 Abgleichs-API zu Wikidata, Abgleichs-API zu MusicBrainz / anderem Service  | 2 Wochen | KW: 1 - 3
 Prototypen fuer einzelne Komponenten bzw Vorbereitung REST o.ä. s.o. Zusammenhang  | ... | ...
 Vorbereitung Messe 12.2  | 1 - 2 Wochen | KW: 5 - 6
+
 ### OCR
+
 Testdaten sind nötig um verschiedene OCR-Systeme zu vergleichen.
 Die Erstellung von Trainingsdaten ist ein weitaus größerer Aufwand,
 da modernere Verfahren (aus dem Bereich Maschinenlernen) grosse Mengen benötigen. 
+
 ### Semantische Analyse
+
 ### Datenbank
 
 Vermutlich bietet es sich an, nicht mit klassischen RDBMs sondern eher mit NoSQL-Datenbanken wie MongoDB oder Apache Cassandra zu arbeiten.
