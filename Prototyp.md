@@ -22,3 +22,15 @@ Bild Dashboard
 Geordnet nach den Status der Karten, können hier alle Karten entsprechend angesehen und gefiltert werden. Im Laufe des Projektes, können hier noch weitere Filtermöglichkeiten folgen, sollten sich diese als pragmatisch Erweisen.
 
 ####der Bearbeitungsbereich:
+Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannten Text der OCR im oberen Bereich an.
+Im unteren Bereich, wird für jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
+
+Der Bereich unterteilt sich in vier Spalten:
+#####Gelesener Text
+Die erkannte Textpassage aus der OCR
+#####Korrektur
+Die im ersten Schritt maschinelle korrigierte Fassung.
+#####Feld-Typ
+Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
+#####Status
+Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
