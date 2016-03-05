@@ -48,15 +48,17 @@ Geordnet nach den Status der Karten, können hier alle Karten entsprechend anges
 [Filterliste_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/Cards_new_01.png "Filterliste_01"
 
 ####der Bearbeitungsbereich:
-Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannten Text der OCR im oberen Bereich an.
+Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder, dessen gescannten Text der OCR und den Status der Karte in Textform im oberen Bereich an und in visuellel als Balken darunter an.
+
 Im unteren Bereich, wird jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
+Hier kann der Nutzer die Korrekturen abspeichern und die Karte damit als 'fertiggestellt' makieren.
 
 Der Bereich unterteilt sich in vier Spalten:
 
 * Gelesener Text: Die erkannte Textpassage aus der OCR
 * Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
-* Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
-* Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
+* Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. siehe Klassifikationstabelle
+* Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. siehe Status
 
 Die Korrketurspalte besitzt zusätzlich einen Informationsbutton, welcher die Informationsvalidierungen in einem Popover anzeigt. Dazu gehören externe Quellen, sowie Nutzerspeicherungen.
 ![alt text][Karten_Head]
