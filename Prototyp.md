@@ -3,11 +3,17 @@
 Um das Projekt programmatisch voranzubringen wurde entschieden, dass bereits frühzeitig ein Prototyp entwickelt werden soll.
 Dies umfasste einmal die gesamte OCR Erkennung die im Abschnitt: TODO: link bereits erläutert wurde und andererseits das Web-Frontend, das in diesem Abschnitt näher erläutert wird.
 
+
+
 ##Frontend
 Die durch die OCR gewonnen Rohdaten müssen im weiteren Verlauf aufgearbeitet werden. Hierfür ist es nötig eine entsprechende Schnittstelle für die menschliche Korrektur und Nachpflege der Daten zu entwickeln. Hier wurde sich für eine Web basierende Oberfläche entschieden, die ausschließlich den Bibliothekaren zur Verfügung steht und die Ergebnisse der maschinellen Korrektur grafisch aufbereitet und anzeigt.
 
 ##Entwicklung
-Der Prototyp wurde voranging vom Team entwickelt und in wöchentlichen Meetings, durch Kritik und Ideensammlungen vervollständigt. Im Vergleich zur Ursprünglichen Skizze war das Ergebnis bereits erkennbar.  TODO: link Bild
+Der Prototyp wurde voranging vom Team entwickelt und in wöchentlichen Meetings, durch Kritik und Ideensammlungen vervollständigt. Im Vergleich zur Ursprünglichen Skizze war das Ergebnis bereits erkennbar.  
+
+![alt text][Mookup_01]
+[Mookup_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png "Mookup_01"
+
 Im weiteren Verlauf wurde entschieden, dass sich die Farbliche Gestaltung am öffentlichen Auftritt der Staatsbibliothek zu Berlin orientieren soll.
 
 ##Implementierung
@@ -22,9 +28,18 @@ Es bildet den Einstieg in das Frontend, und zeigt in einer übersichtlichen Dars
 ####Filterlisten: 
 Geordnet nach den Status der Karten, können hier alle Karten entsprechend angesehen und gefiltert werden. Im Laufe des Projektes, können hier noch weitere Filtermöglichkeiten folgen, sollten sich diese als pragmatisch Erweisen.
 
+![alt text][Filterliste_01]
+[Filterliste_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/Cards_new_01.png "Filterliste_01"
+
 ####der Bearbeitungsbereich:
 Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannten Text der OCR im oberen Bereich an.
 Im unteren Bereich, wird jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
+
+![alt text][Karten_Head]
+[Karten_Head]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_02.png "Karten_Head"
+
+![alt text][Karten_Footer]
+[Karten_Footer]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_03.png "Karten_Footer"
 
 Der Bereich unterteilt sich in vier Spalten:
 
