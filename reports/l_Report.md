@@ -15,5 +15,6 @@ Report L.
 | 10 | 09.01 - 15.01 | --- | css styling angepasst auf webseitne farben nach schema und ideen, logos integriert,popover integriert, error messages implementiert
 | 11 | 16.01 - 21.01 | --- | popover html integration, progress bar und status berechnung , form an simons wochenarbeit angepasst
 | 12 | 17.01 - 28.01 | --- | fake daten für karte und popover, erweiterung der entites um komposition(worddokument), dataprovider, korrektur informationsdaten, umbau der ocr suggestion in eigene types
-|13| 29-04.02| weiterarbeit an den offnene punkten der letzten woche, entites suggestions , popover integration in orm, einbinden ins form html
-
+|13| 29.01 - 04.02| --- | weiterarbeit an den offnene punkten der letzten woche, entites suggestions , popover integration in orm, einbinden ins form html
+|14| 05.02 - 11.02| --- | Vorarbeit für die Showtime
+|14| 12.02| --- | Präsentation auf der Showtime
