@@ -27,7 +27,7 @@ Im unteren Bereich, wird für jede Information, die aus dem Text extrahiert wurd
 
 Der Bereich unterteilt sich in vier Spalten:
 
-1.Gelesener Text: Die erkannte Textpassage aus der OCR
-2.Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
-3.Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
-4.Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
+* Gelesener Text: Die erkannte Textpassage aus der OCR
+* Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
+* Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
+* Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
