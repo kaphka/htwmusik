@@ -67,32 +67,33 @@ Das System vergibt je nach voraussichtlicher Sicherheit der erkannten Informatio
 
 #####OK: 	
 Die Information:
-- 	wurde durch einen Nutzer gespeichert
--	wurde im Vorfeld durch viele Nutzer gespeichert
--	konnte durch externe Quellen stichhaltig Belegt werden
--	Die Klassifikation ist eindeutig zuzuordnen
+- wurde durch einen Nutzer gespeichert
+- wurde im Vorfeld durch viele Nutzer gespeichert
+- konnte durch externe Quellen stichhaltig Belegt werden
+- Die Klassifikation ist eindeutig zuzuordnen
 	
 #####Warnung:
 Die Information:
--	konnte nicht eindeutig klassifiziert werden
--	ist mehrdeutig
--	konnte nicht durch genügend Quellen zweifelsfrei belegt werden
+- konnte nicht eindeutig klassifiziert werden
+- ist mehrdeutig
+- konnte nicht durch genügend Quellen zweifelsfrei belegt werden
 
 #####Error:
 Die Information:
--	konnte nicht klassifiziert werden
--	hat Fehler in der Zusammensetzung
--	entspricht nicht den formalen Vorgaben(z.B. Signaturkontext)
--	besitzt keine externen Quellennachweise
--	wurde im Vorfeld nie bestätigt
+- konnte nicht klassifiziert werden
+- hat Fehler in der Zusammensetzung
+- entspricht nicht den formalen Vorgaben(z.B. Signaturkontext)
+- besitzt keine externen Quellennachweise
+- wurde im Vorfeld nie bestätigt
 
 
 ###Ausstehende Erweiterungen:
 In Gesprächen mit Verantwortlichen und Nutzern, wurden einige Komponenten erfasst, die im Laufe des Projektes noch ergänzt bzw. nachgepflegt werden müssen:
--integration eines User-Logins
--Administrationsoberfläche für die Nutzerverwaltung
--Erweiterung der Bearbeitungsoberfläche
-	-Kartenbilder im linken Teilabschnitt mitscrollen lasse, um die Bearbeitung zu erleichtern.
-	-Auszüge des Kartenbilds über den entsprechenden Korrekturfeldern anzeigen lassen
-	-Button, für das Hinzufügen von weiteren Informationssegmenten
-	-Buttons für die Speicherung von einzelnen Segmenten
+
+- integration eines User-Logins
+- Administrationsoberfläche für die Nutzerverwaltung
+- Erweiterung der Bearbeitungsoberfläche
+- Kartenbilder im linken Teilabschnitt mitscrollen lasse, um die Bearbeitung zu erleichtern.
+- Auszüge des Kartenbilds über den entsprechenden Korrekturfeldern anzeigen lassen
+- Button, für das Hinzufügen von weiteren Informationssegmenten
+- Buttons für die Speicherung von einzelnen Segmenten
