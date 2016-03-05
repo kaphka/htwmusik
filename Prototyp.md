@@ -15,6 +15,11 @@ Diese sind jedoch nicht weiter aufbereitet, dies ist Teil des zweiten Projektabs
 ##Entwicklung
 Der Prototyp wurde voranging vom Team entwickelt und in wöchentlichen Meetings, durch Kritik und Ideensammlungen vervollständigt. Im Vergleich zur Ursprünglichen Skizze war das Ergebnis bereits erkennbar. 
 
+![alt text][Mookup_01]
+[Mookup_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png "Mookup_01"
+
+Im weiteren Verlauf wurde entschieden, dass sich die Farbliche Gestaltung am öffentlichen Auftritt der Staatsbibliothek zu Berlin orientieren soll.
+
 ## Technik
 Der Prototyp wurde mit Ruby und Ruby on Rails umgesetzt. 
 Dies bietet einen großen Fundus an Erweiterungen(Gems), die einfach ins Projekt eingebunden werden können.
@@ -26,10 +31,6 @@ Für das Styling wurde Bootstrap implementiert und entsprechend der Vorgaben und
 - [Ruby on Rails](http://rubyonrails.org/)
 - [Bootstrap](http://getbootstrap.com/)
 
-![alt text][Mookup_01]
-[Mookup_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/edit.png "Mookup_01"
-
-Im weiteren Verlauf wurde entschieden, dass sich die Farbliche Gestaltung am öffentlichen Auftritt der Staatsbibliothek zu Berlin orientieren soll.
 
 ##Implementierung
 Der Prototyp umfasst drei große Teilbereiche, dazu gehören:
