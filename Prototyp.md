@@ -35,18 +35,20 @@ Geordnet nach den Status der Karten, können hier alle Karten entsprechend anges
 Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannten Text der OCR im oberen Bereich an.
 Im unteren Bereich, wird jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
 
-![alt text][Karten_Head]
-[Karten_Head]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_02.png "Karten_Head"
-
-![alt text][Karten_Footer]
-[Karten_Footer]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_03.png "Karten_Footer"
-
 Der Bereich unterteilt sich in vier Spalten:
 
 * Gelesener Text: Die erkannte Textpassage aus der OCR
 * Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
 * Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
 * Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
+
+Die Korrketurspalte besitzt zusätzlich einen Informationsbutton, welcher die Informationsvalidierungen anzeigt. Dazu gehören externe Quellen, sowie Nutzerspeicherungen.
+![alt text][Karten_Head]
+[Karten_Head]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_02.png "Karten_Head"
+![alt text][Karten_Footer]
+[Karten_Footer]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_03.png "Karten_Footer"
+![alt text][Karten_Popup]
+[Karten_Popup]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_05.png "Karten_Popup"
 
 ###Klassifikationstabelle
 
@@ -69,7 +71,7 @@ Die Information:
 -	wurde im Vorfeld durch viele Nutzer gespeichert
 -	konnte durch externe Quellen stichhaltig Belegt werden
 -	Die Klassifikation ist eindeutig zuzuordnen
--	
+	
 #####Warnung:
 Die Information:
 -	konnte nicht eindeutig klassifiziert werden
