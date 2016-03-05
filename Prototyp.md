@@ -1,7 +1,7 @@
 #Prototyp
 
 Um das Projekt programmatisch voranzubringen wurde entschieden, dass bereits frühzeitig ein Prototyp entwickelt werden soll.
-Dies umfasste einmal die gesamte OCR Erkennung die im Abschnitt: TODO: link bereits erläutert wurde und andererseits das Web-Frontend, das in diesem Abschnitt näher erläutert wird.
+Dies umfasste einmal die gesamte OCR Erkennung und andererseits das Web-Frontend, das in diesem Abschnitt näher erläutert wird.
 
 
 
