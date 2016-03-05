@@ -23,7 +23,7 @@ Geordnet nach den Status der Karten, können hier alle Karten entsprechend anges
 
 ####der Bearbeitungsbereich:
 Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannten Text der OCR im oberen Bereich an.
-Im unteren Bereich, wird für jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
+Im unteren Bereich, wird jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
 
 Der Bereich unterteilt sich in vier Spalten:
 
@@ -32,8 +32,19 @@ Der Bereich unterteilt sich in vier Spalten:
 * Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
 * Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
 
+###Klassifikationstabelle
 
-###Status:
+|Kategorie|Benennung RAK|
+| ------------- |:-------------:|
+|7100|Signatur|
+|3000|1. Verfasser|
+|3220|Ansetzungssachtitel|
+|4000|Hauptsachtitel, Zusätze, Verfasserangabe|
+|4030|Ort, Verlag|
+|7100|Erscheinungsjahr|
+|7100|Umfangsangabe|
+
+###Status
 Das System vergibt je nach voraussichtlicher Sicherheit der erkannten Informationen und dessen Validierung durch externe Quellen, eine Prognose über die Genauigkeit des Informationssegmentes.
 
 #####OK: 	
