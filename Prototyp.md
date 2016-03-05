@@ -49,7 +49,7 @@ Die Information:
 -	konnte nicht durch genügend Quellen zweifelsfrei belegt werden
 
 #####Error:
-     Die Information:
+Die Information:
 -	konnte nicht klassifiziert werden
 -	hat Fehler in der Zusammensetzung
 -	entspricht nicht den formalen Vorgaben(z.B. Signaturkontext)
