@@ -26,7 +26,7 @@ Der Bearbeitungsbereich, zeigt die entsprechenden Rohbilder und dessen gescannte
 Im unteren Bereich, wird für jede Information, die aus dem Text extrahiert wurde, grafisch aufgearbeitet und präsentiert.
 
 Der Bereich unterteilt sich in vier Spalten:
-Gelesener Text: Die erkannte Textpassage aus der OCR
-Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
-Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
-Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
+1. Gelesener Text: Die erkannte Textpassage aus der OCR
+2. Korrektur: Die im ersten Schritt maschinelle korrigierte Fassung.
+3. Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
+4. Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
