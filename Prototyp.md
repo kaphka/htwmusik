@@ -16,7 +16,8 @@ Der Prototyp umfasst drei große Teilbereiche, dazu gehören:
 ####das Dashboard:
 Es bildet den Einstieg in das Frontend, und zeigt in einer übersichtlichen Darstellung, die verarbeiteten Kartenstatus, sowie die neusten Karten des Status ‚neu‘ und ‚fertiggestellt‘.
 
-Bild Dashboard
+![alt text][Dashboard_01]
+[Dashboard_01]: https://github.com/kaphka/htwmusik/blob/master/bilder/Dashboard_01.png "Dashboard"
 
 ####Filterlisten: 
 Geordnet nach den Status der Karten, können hier alle Karten entsprechend angesehen und gefiltert werden. Im Laufe des Projektes, können hier noch weitere Filtermöglichkeiten folgen, sollten sich diese als pragmatisch Erweisen.
@@ -53,6 +54,7 @@ Die Information:
 -	wurde im Vorfeld durch viele Nutzer gespeichert
 -	konnte durch externe Quellen stichhaltig Belegt werden
 -	Die Klassifikation ist eindeutig zuzuordnen
+-	
 #####Warnung:
 Die Information:
 -	konnte nicht eindeutig klassifiziert werden
