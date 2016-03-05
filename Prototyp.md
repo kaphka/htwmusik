@@ -58,7 +58,7 @@ Der Bereich unterteilt sich in vier Spalten:
 * Feld-Typ: Der bezeichnende Feld-Typ für das Informationssegment. Siehe Klassifikationstabelle
 * Status: Der Status, der vom System anhand der erfolgten Korrektur vergeben wurde. Siehe Status
 
-Die Korrketurspalte besitzt zusätzlich einen Informationsbutton, welcher die Informationsvalidierungen anzeigt. Dazu gehören externe Quellen, sowie Nutzerspeicherungen.
+Die Korrketurspalte besitzt zusätzlich einen Informationsbutton, welcher die Informationsvalidierungen in einem Popover anzeigt. Dazu gehören externe Quellen, sowie Nutzerspeicherungen.
 ![alt text][Karten_Head]
 [Karten_Head]: https://github.com/kaphka/htwmusik/blob/master/bilder/card_overview_02.png "Karten_Head"
 ![alt text][Karten_Footer]
