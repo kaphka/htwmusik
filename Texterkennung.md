@@ -75,3 +75,9 @@ Mehrteilige Karten enstehen wenn die Beschreibung eines Mediums nicht auf eine K
 Die Erkennung von zusammenhängenden Karten wird Teil des ersten Verarbeitungsschritts.
 Alle Karten die ein Medium beschreiben haben den gleichen Index und die gleiche Signatur auf der Karte.
 Sprich Folgekarten haben Textzeilen die sich optisch ähneln. Diese Ähnlichkeit stellt wird dann das Kriterum um Gruppen von Karten zu bilden.
+
+
+## Ergebnisse
+
+Die Ergebnisse befinden sich im Repository [kaphka/catalog-ocr-test](https://github.com/kaphka/catalog-ocr-test) in der Form von Jupyther-Notebooks.
+Im späteren Verlauf des Projekts sollen die Arbeitsschritte die in den Notebooks entwickelt werden in einer Python-library umgesetzt werden. 
