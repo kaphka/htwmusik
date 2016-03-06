@@ -37,3 +37,17 @@ anzupassen (Verzeichnisstruktur)
 - Training eines OCR-Modells mit ocropy (eher nur ausprobiert, da zu wenig Daten)
 - OCR-Diagramm erweitert: Vorverarbeitung der Daten, Datenpipeline 
 
+## 8.1.2016 - 14.1.2016
+
+- Entfernung des Scannerhintergrunds auf den Karten.
+- Ursprüngliche Idee das Loch auf der Karte mittels Houghtransformation zu finden war nicht sehr konsistent
+- Dokumentation
+
+## 15.1.2016 - 21.1.2016
+
+## 22.1.2016 - 28.1.2016
+
+## 29.1.2016 - 12.1.2016
+
+- Schreiben und Layout des Plakats
+- Erstellung der Showtime-Präsentation
