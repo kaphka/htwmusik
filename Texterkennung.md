@@ -49,7 +49,7 @@ Aus Datenbank mit Autoren, Werktiteln und Abkürzungen können auch Textzeilen e
 
 Aufteilen der Daten in Trainings- und Testset (70:30 Split)
 
-### machinelles Lernen
+### Machinelles Lernen
 Evaluierne von:
 * https://github.com/tesseract-ocr
 * https://github.com/tmbdev/ocropy
@@ -63,3 +63,15 @@ Zusätzlich zum Textinhalt wird die Position jeder Textzeile gespeichert.
 Das Extrahieren der Mediensignatur wird dadürch wesentlich erleichtert (die Signatur ist immer oben rechts auf der Karte). 
 Bei der Retrokonversion werden werden die Ergebnisse korrigiert.
 Diese können dann wieder in das Trainingsset eingebunden werden.
+
+## Nutzung von Indexierung und mehrteilige Karten
+
+Die Qualität und Quantität des Datensatzes entscheidet oft über den Erfolg beim Einsatz von ML-Verfahren.
+Für etwa 30000 Karten liegt der Indextext in maschinenlesbarer Form vor.
+Zu jedem Index kann dann die zugehörige Textzeile (als Bild) gefunden werden. 
+Dieses Paar aus Trainingsdaten und Label kann dann auch für as Maschinenlernen benutzt werden.
+
+Mehrteilige Karten enstehen wenn die Beschreibung eines Mediums nicht auf eine Karte passt.
+Die Erkennung von zusammenhängenden Karten wird Teil des ersten Verarbeitungsschritts.
+Alle Karten die ein Medium beschreiben haben den gleichen Index und die gleiche Signatur auf der Karte.
+Sprich Folgekarten haben Textzeilen die sich optisch ähneln. Diese Ähnlichkeit stellt wird dann das Kriterum um Gruppen von Karten zu bilden.
