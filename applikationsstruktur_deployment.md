@@ -21,11 +21,11 @@ Die folgende Grafik veranschaulicht die serverseitige Ordnerstruktur des Deploym
 ![Deployment directory structure](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/htwmusic_directory_structure.png "Deployment directory structure")
 
 Die einzelnen Elemente des Directory-Listings sind dabei die folgenden:
-Name |  Beschreibung|
------------- | -------------|
-current | Symlink auf den Ordner, der das aktuelle Release der Applikation beinhaltet |
-last_version | Beinhaltet den Index des aktuellen Releases |
-releases | In diesem Ordner werden die letzten 5 Releases der Applikation vorgehalten. Ein Rollback auf eine vorherige Version ist damit problemlos machbar. |
-scm | Klon des Git-Repositories von [GitHub](https://github.com/albrechtsimon/htwmusic_webapp) |
-shared | Dateien und Verzeichnisse, welche von Release zu Release gleich bleiben (z.B. Konfigurationen oder Assets wie Grafiken) |
-tmp | Temporary files. |
+|  Name |  Beschreibung|
+| ------------ | -------------|
+| current | Symlink auf den Ordner, der das aktuelle Release der Applikation beinhaltet |
+| last_version | Beinhaltet den Index des aktuellen Releases |
+| releases | In diesem Ordner werden die letzten 5 Releases der Applikation vorgehalten. Ein Rollback auf eine vorherige Version ist damit problemlos machbar. |
+| scm | Klon des Git-Repositories von [GitHub](https://github.com/albrechtsimon/htwmusic_webapp) |
+| shared | Dateien und Verzeichnisse, welche von Release zu Release gleich bleiben (z.B. Konfigurationen oder Assets wie Grafiken) |
+| tmp | Temporary files. |
