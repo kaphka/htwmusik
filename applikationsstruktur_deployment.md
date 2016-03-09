@@ -21,6 +21,7 @@ Die folgende Grafik veranschaulicht die serverseitige Ordnerstruktur des Deploym
 ![Deployment directory structure](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/htwmusic_directory_structure.png "Deployment directory structure")
 
 Die einzelnen Elemente des Directory-Listings sind dabei die folgenden:
+
 |  Name |  Beschreibung|
 | ------------ | -------------|
 | current | Symlink auf den Ordner, der das aktuelle Release der Applikation beinhaltet |
