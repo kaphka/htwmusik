@@ -6,8 +6,23 @@ Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Absc
 
 ##Dashboard
 Das Dashboard bildet den Einstieg in die Applikation, in diesem werden alle Kartenzustände grafisch dargestellt.
+![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/dashboard.jpg "Dashboard")
+
+1. Schnellauswahl für die Filterlisten#
+2. Grafische Darstellung der Karten Status
+3. Übersicht der Karten
+
 ##Filterungslisten 
 In der Listenübersicht kann nach Inhalten von Karten gesucht werden, um thematisch zusammenhängende Karten zu finden.
+
+![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/liste.jpg "Filterliste")
+
+1. Suchen nach Kartennummern
+2. Suche für die OCR-Texte
+3. Kartenvorschau
+4. Kartennummer
+5. Status der Karte
+
 ##Kartenübersicht
 Die Kartenübersicht bildet alle gefundenen und verarbeiteten  Daten ab. Diese werden in zwei verschiedenen Ansichten präsentiert, um die Übersicht zu gewährleisten.
  
