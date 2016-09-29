@@ -43,7 +43,7 @@ aufrufen und bietet eine Übersicht, die zumeist für das debuggen ausreichte. N
 
 ###Datenbankadapter
 Es ist notwendig das eine persistente Datenbank zur Verfügung steht, diese muss in Rails definiert sein, da Resque im default diese für seine Jobs benutzt. 
-In der Entwicklung wurden MySqlund Postgress verwendet. Theoretisch sind auch andere denkbar. 
+In der Entwicklung wurden MySql und Postgress verwendet. Theoretisch sind auch andere denkbar. 
 
 ###Überblick
 Es existieren derzeit folgende Jobs im Projekt:
