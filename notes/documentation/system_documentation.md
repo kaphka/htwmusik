@@ -16,6 +16,20 @@ Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst
 
 ![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/f7524b64e9d6b3f16725bdc42d2a4883f52b56d7/bilder/frontend.jpg "Frontend 1")
 
+1. Auswahl der derzeitigen Übersicht
+2. Status der derzeitigen Karte
+3. Aus der OCR erfasster Text.
+4. Bild der Karte
+5. Der aus der OCR gelesene Textabschnitt
+6. Gefundene Korrektur
+7.Typ aus Katalogübersicht
+8.Status des Feldes
+9.Speichern oder Löschen von Feldern
+10.Erzeugen eines neuen Feldes
+11.Speichern der derzeitigen Änderungen
+12.Speichern der derzeitigen Änderungen und versiegeln der Karte
+
+
 #Jobs
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
 Die Grundlage dafür bildet Resque, ein Queue System von GitHub https://github.com/resque/resque. Die nötigen Bestandteile von  Resque können durch entsprechende Gems in Rails integriert werden und sind so in der Lage auf entsprechende Ressourcen zuzugreifen.
