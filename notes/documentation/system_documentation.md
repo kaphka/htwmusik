@@ -22,12 +22,15 @@ Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst
 4. Bild der Karte
 5. Der aus der OCR gelesene Textabschnitt
 6. Gefundene Korrektur
-7.Typ aus Katalogübersicht
-8.Status des Feldes
-9.Speichern oder Löschen von Feldern
-10.Erzeugen eines neuen Feldes
-11.Speichern der derzeitigen Änderungen
-12.Speichern der derzeitigen Änderungen und versiegeln der Karte
+7. Typ aus Katalogübersicht
+8. Status des Feldes
+9. Speichern oder Löschen von Feldern
+10. Erzeugen eines neuen Feldes
+11. Speichern der derzeitigen Änderungen
+12. Speichern der derzeitigen Änderungen und versiegeln der Karte
+
+###Korrektur
+Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch verarbeitet wurden. Hier ist ersichtlich aus welchen Verzeichnissen die gefundenen Daten erzeugt wurden und weshalb die Änderungen übernommen wurden.
 
 
 #Jobs
