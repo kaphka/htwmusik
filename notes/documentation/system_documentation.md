@@ -10,7 +10,8 @@ Für die Nutzung der Jobs sind folgende Bestandteile notwendig
 ###Redis 
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
-{'class': ExternalInterpreterLookup,'args': [ 1 , ‘normal’ ] }
+
+*{'class': ExternalInterpreterLookup,'args': [ 1 , ‘normal’ ] }*
 
 Die Klasse beschreibt den Job der durch einen Workern durch den Invoke Process erzeugt wird.
 
@@ -18,7 +19,7 @@ Die Argumente bestimmen die Parameter der perform() Methode, die jeder Job anbie
 
 Zu beachten ist, dass nur Parameter abgelegt werden können, die in einen JSON umgewandelt  werden können. Es ist deshalb notwendig z.B. auf Objekt IDs zurückzugreifen, anstatt auf direkte Objektreferenzen bei der Übergabe an 
 
-Resque.enqueue(ExternalInterpreterLookup, 1, normal)
+*Resque.enqueue(ExternalInterpreterLookup, 1, normal)*
 
 Näheres dazu in der Dokumentation von Resque und Redis https://github.com/resque/resque
 
@@ -35,7 +36,7 @@ gestartet werden können. Hierbei bestimmt Count die Anzahl der Worker. Im Proje
 
 Für die Verwaltuing bietet resque gleich eine Schnitstelle im Frontend mit diese lässt sich mit 
 
-/resque_web 
+*/resque_web *
 
 aufrufen und bietet eine Übersicht, die zumeist für das debuggen ausreichte. Näheres dazu in der Dokumentation von Resque.
 
@@ -45,17 +46,21 @@ In der Entwicklung wurden MySqlund Postgress verwendet. Theoretisch sind auch an
 
 ###Überblick
 Es existieren derzeit folgende Jobs im Projekt:
+
 ####CardFactory
 Da die Notwendigkeit besteht,  alle Karten in den übergebenen Jsons zu Objekte zu überführen, werden hier Karten stückweise angelegt. Hierfür werden die Json-Rohdaten in Teile zerlegt und dann auf mehrere Worker verteilt.
+
 ####ExternalWorkLookup
 Hier wird das Auflösen von Werken, aus dem Werksverzeichnis durchgeführt. Durch die Korrektur ist davon auszugehen das Werke bereits aufgelöst wurden. Deshalb reicht ein einfaches Matching.
+
 ####ExternalInterpreterLookup
 Hier wird das Auflösen von Interpreten, aus dem Interpretenverzeichnis durchgeführt.
 Für jede Person im Verzeichnis wird eine Suche ausgeführt, dafür werden zuerst volle Namen aus dem Verzeichnis im Text gesucht, dies wäre der Idealfall, sollte die Korrektur gut gearbeitet haben.
 Sollte kein Treffer gelandet werden, wird im Text nach Vor- und Nachnamen gesucht.  Dies ist ungenau und kann zu Fehlern führen, umgeht aber Schreibweisen und Einrückungen.
+
 ####SignatureLookup
 Hier wird das Auflösen von Signaturen, aus dem Signaturenverzeichnis durchgeführt. Diese werden auf Basis von RegEx begriffen aufgelöst. Dies geschieht Zeilenweise von oben nach unten. Aufgrund der OCR ist die Zeilennummer nicht ausschlaggebend für die Position der Signaturen. Für die Suche wird der Text von Leerzeichen befreit und in Großbuchstaben umgewandelt, dies vereinfacht die Erkennung.
-Die RegEx-Begriffe werden aus der signatures.txt geladen und enthalten folgende angaben
+Die RegEx-Begriffe werden aus der *signatures.txt* geladen und enthalten folgende angaben
 Bezeichnung nach Katalog
 Die Beispielzusammensetzung für Signaturen dieses Typs
 Beschreibung
