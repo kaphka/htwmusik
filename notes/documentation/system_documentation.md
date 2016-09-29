@@ -6,9 +6,10 @@ Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Absc
 
 ##Dashboard
 Das Dashboard bildet den Einstieg in die Applikation, in diesem werden alle Kartenzustände grafisch dargestellt.
+
 ![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/dashboard.jpg "Dashboard")
 
-1. Schnellauswahl für die Filterlisten#
+1. Schnellauswahl für die Filterlisten
 2. Grafische Darstellung der Karten Status
 3. Übersicht der Karten
 
@@ -47,6 +48,14 @@ Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst
 ###Korrektur
 Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch verarbeitet wurden. Hier ist ersichtlich aus welchen Verzeichnissen die gefundenen Daten erzeugt wurden und weshalb die Änderungen übernommen wurden.
 
+![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/korrektur.jpg "Korrektur")
+
+1. Karte
+2. unkorregierter OCR-Text
+3. Text nach der Korrektur
+4. Teilstück das Als Korrekturvorlage diente
+5. Korrektur des Teilstückes
+6. Basis, auf dessen Grundlage das Teilstück korregiert wurde.
 
 #Jobs
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
