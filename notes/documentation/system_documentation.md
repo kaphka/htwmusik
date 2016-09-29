@@ -53,7 +53,7 @@ Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch vera
 1. Karte
 2. unkorregierter OCR-Text
 3. Text nach der Korrektur
-4. Teilstück das Als Korrekturvorlage diente
+4. Teilstück das als Korrekturvorlage diente
 5. Korrektur des Teilstückes
 6. Basis, auf dessen Grundlage das Teilstück korregiert wurde.
 
