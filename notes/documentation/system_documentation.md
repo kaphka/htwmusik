@@ -11,7 +11,7 @@ Für die Nutzung der Jobs sind folgende Bestandteile notwendig
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
 
-*{'class': ExternalInterpreterLookup,'args': [ 1 , ‘normal’ ] }*
+`{'class': ExternalInterpreterLookup,'args': [ 1 , ‘normal’ ] }`
 
 Die Klasse beschreibt den Job der durch einen Workern durch den Invoke Process erzeugt wird.
 
