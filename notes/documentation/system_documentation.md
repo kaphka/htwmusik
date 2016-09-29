@@ -15,28 +15,29 @@ Als Beispiel kann folgender JSON String dienen:
 
 Die Klasse beschreibt den Job der durch einen Workern durch den Invoke Process erzeugt wird.
 
-Die Argumente bestimmen die Parameter der perform() Methode, die jeder Job anbieten muss.
+Die Argumente bestimmen die Parameter der `perform()` Methode, die jeder Job anbieten muss.
 
 Zu beachten ist, dass nur Parameter abgelegt werden können, die in einen JSON umgewandelt  werden können. Es ist deshalb notwendig z.B. auf Objekt IDs zurückzugreifen, anstatt auf direkte Objektreferenzen bei der Übergabe an 
 
-*Resque.enqueue(ExternalInterpreterLookup, 1, normal)*
+`Resque.enqueue(ExternalInterpreterLookup, 1, normal)`
 
 Näheres dazu in der Dokumentation von Resque und Redis https://github.com/resque/resque
 
 
 ###Resque
 Resque ist ein Job System, welches die Bestandteile von Redis nutzt, um Jobs zu erzeugen und auszuführen.
-Jobs können generell alle Klassen sein die eine perform() Methode anbieten, es empfiehlt sich diese jedoch separat zu strukturieren. 
+Jobs können generell alle Klassen sein die eine `perform()` Methode anbieten, es empfiehlt sich diese jedoch separat zu strukturieren. 
 Jobs im Projekt liegen in lib/processing/jobs
 Resque bietet mit Workern dann die Basis, Workern erzeugen die entsprechenden Klassen, die ihnen durch Redis übergeben werden und führen die Methode perform() auf diesen aus.
 Worker selbst sind Sub-Prozesse die über 
-COUNT=5 QUEUE=* rake resque:workers
+
+`COUNT=5 QUEUE=* rake resque:workers`
 
 gestartet werden können. Hierbei bestimmt Count die Anzahl der Worker. Im Projekt zeigte sich, dass eine Anzahl von Workern, die die maximale Kernzahl übersteigt, keinen Performancegewinn erzeugt. Teilweise stürzte die gesamte Workerstruktur dadurch hab, Erklärungen gab es dafür keine und es ist möglich das sich das nicht reproduzieren lässt, es ist daher lediglich als Anmerkung zu sehen.
 
 Für die Verwaltuing bietet resque gleich eine Schnitstelle im Frontend mit diese lässt sich mit 
 
-*/resque_web *
+`/resque_web`
 
 aufrufen und bietet eine Übersicht, die zumeist für das debuggen ausreichte. Näheres dazu in der Dokumentation von Resque.
 
