@@ -7,9 +7,7 @@
 Die Basis für das Frontend bildet Rails. Rails dient einerseits als Backend und stellt mit der verwendeten Templateengine ERB alle Ansichten dar. ERB umfasst eine Templatesyntax, welche durch viele Funktionen und Modulen die Entwicklung vereinfacht. Für den Nutzer werden die entsprechenden Daten aufbereitet und abschließend ausgeliefert. Hierbei sind weitere Technologien eingebunden wie u.a. Bootstrap.
 
 #Gestaltung
-Die Gestaltung des Frontends orientiert sich einerseits an der Farbgebung der Webseite der Staatsbibliothek zu Berlin, andererseits an einer einfachen tasterturgebundenen Bedienung.
-
-Die Bedienung und Gestaltung wurde zudem Umfangreich in Meetings besprochen und kann als final angesehen werden, auch wenn es evtl Verbesserungsvorschläge gibt.
+Die Gestaltung des Frontend orientiert sich einerseits an der Farbgebung der Webseite der Staatsbibliothek zu Berlin, andererseits an einer einfachen tasterturgebundenen Bedienung.
 
 #Komponenten
 Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Abschnitt näher erläutert werden.
@@ -65,14 +63,16 @@ Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch vera
 3. Text nach der Korrektur
 4. Teilstück das als Korrekturvorlage diente
 5. Korrektur des Teilstückes
-6. Basis, auf dessen Grundlage das Teilstück korregiert wurde.
+6. Basis, auf dessen Grundlage das Teilstück korrigiert wurde.
 
 ##Verbesserungen
-###Accountmanagment
-Das Frotnend umfasst kein Accountmanagment. Auch wenn dies nicht genutzt werden soll, um einzelne Nutzer zu überwachen, wäre jedoch die Umsetzung nicht sonderlich kompleziert und würde die Anwendung für weitere Szenarien öffnen, beispielsweise Fremdleistungen.
+
+###Accountmanagement
+Das Frontend umfasst kein Accountmanagement. Auch wenn dies nicht genutzt werden soll, um einzelne Nutzer zu überwachen, wäre jedoch die Umsetzung nicht sonderlich kompliziert und würde die Anwendung für weitere Szenarien öffnen, beispielsweise Fremdleistungen.
 
 ###Bildscrolling und 16:9
-Für die Ansicht wurde sich gewünscht das die Karte beim Scrollen durch die Felder imemr sichtbar sein sollte. Dies wurde insofern abgeschwächt, das nun der restliche unbearbeitete Text unter den Feldenr sichtbar ist. Hier müsste eroiert werden, ob und inwiefern die Umsetzung vom bildmitlauf noch gewünscht wäre. Zudem wäre ein Breiteres Desing möglich, da das derzeitge noch etwas Freiraum an den Seiten bietet. Es gab jedoch kein uns bekanntes Szenario das einen anderen Aufbau gerechtfertigt hätte. Hier könnten alternative entworfen werden.
+Für die Ansicht wurde sich gewünscht das die Karte beim Scrollen durch die Felder immer sichtbar sein sollte. Dies wurde insofern abgeschwächt, das nun der restliche unbearbeitete Text unter den Feldern sichtbar ist. Hier müsste eruiert werden, ob und inwiefern die Umsetzung vom Bildmitlauf noch gewünscht wäre. Zudem wäre ein Breiteres Design möglich, da das derzeitige noch etwas Freiraum an den Seiten bietet. Es gab jedoch kein uns bekanntes Szenario das einen anderen Aufbau gerechtfertigt hätte. Hier könnten alternative entworfen werden.
+
 
 #Jobs
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
