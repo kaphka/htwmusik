@@ -97,7 +97,7 @@ Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Absc
 ##Dashboard
 Das Dashboard bildet den Einstieg in die Applikation, in diesem werden alle Kartenzustände grafisch dargestellt.
 
-![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/dashboard.jpg "Dashboard")
+![Dashboard](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/dashboard.jpg "Dashboard")
 
 1. Schnellauswahl für die Filterlisten
 2. Grafische Darstellung der Karten Status
@@ -106,7 +106,7 @@ Das Dashboard bildet den Einstieg in die Applikation, in diesem werden alle Kart
 ##Filterungslisten
 In der Listenübersicht kann nach Inhalten von Karten gesucht werden, um thematisch zusammenhängende Karten zu finden.
 
-![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/liste.jpg "Filterliste")
+![Filterliste](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/liste.jpg "Filterliste")
 
 1. Suchen nach Kartennummern
 2. Suche für die OCR-Texte
@@ -120,7 +120,7 @@ Die Kartenübersicht bildet alle gefundenen und verarbeiteten  Daten ab. Diese w
 ###Felderübersicht
 Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst, sowie der erkannte OCR-Text.
 
-![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/frontend.jpg "Frontend 1")
+![Frontend 1](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/frontend.jpg "Frontend 1")
 
 1. Auswahl der derzeitigen Übersicht
 2. Status der derzeitigen Karte
@@ -138,7 +138,7 @@ Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst
 ## Korrektur
 Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch verarbeitet wurden. Hier ist ersichtlich aus welchen Verzeichnissen die gefundenen Daten erzeugt wurden und weshalb die Änderungen übernommen wurden.
 
-![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/korrektur.jpg "Korrektur")
+![Korrektur](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/korrektur.jpg "Korrektur")
 
 1. Karte
 2. unkorregierter OCR-Text
