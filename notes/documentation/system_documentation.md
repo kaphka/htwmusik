@@ -67,7 +67,7 @@ Entwicklungsphase sowie die Deployment-Infrastruktur während der Entwicklung (k
 
 Nach dem zeiten Projektsemester sieht die Infrastuktur der Softwarekomponenten wiefolgt aus:
 
-![Infrastructure](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/infrastructure_new.png "Infrastructure")
+![Infrastructure](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/diagramme/infrastructure_new.png "Infrastructure")
 
 
 | Komponente |  Aufgabe | Konfiguration |
@@ -332,12 +332,21 @@ So definiert sich als Hauptziel, die Entwicklung eines Systems zur Verarbeitung 
 Daraus definieren sich Meilensteine die im Wochenplan festgehalten wurden. Diese unterscheiden sich je nach Anwendungsgebiet.
 Der größte Meilenstein des Projektes, war klar die Präsentation auf der Messe der HTW, diese war ein voller Erfolg, so dass das Projekt als solches als Erfolg verbucht werden kann, auch wenn nicht alle Meilensteine gänzlich erfüllt wurden.
 Die Meilensteine definieren sich aus dem aktuellsten Wochenplan, der für das Projekt angelegt wurde.
-##OCR
-TODO JAKOB: Hast du alles erreicht?
+
+## OCR
+
+Die grundlegende Aufgabe der Verbesserung und Automatisierung der OCR konnte konsequent bearbeitet. 
+Im Verlauf der Arbeit wurde klar das die Fehlerraten, die in vielen Publikationen 
+berichtet werden, nicht in realen Datensets erreicht werden können. 
+Es wurden neben der OCR auch an weiteren Methoden zur Datenextrahierung gearbeitet wie zum Beispiel
+die Erkennung der Kartensprache und des Kartentyps.
+Jedoch kann man diese Daten nur weiterverarbeiten, wenn man auch die Genauigkeit validiert,
+ein Integration in die Pipeline vornimmt und ein Nutzungsformat spezifiziert.
+
 
 ##Korrektur
-Im Großen und Ganzen wurden alle Meilensteine abgearbeitet und umgesetzt. Dazu gehört das entwickeln eines Systems inkl. ElasticSearch integration, der Prozessmodelierung und Abarbeitung, Entwicklung eines Persitenzmodels, Anlegen eines Jobsystems für asynchrone Tasks, Korrektur von Ergebnissen auf Basis von GND Daten.
-Aufgrund der Veränderung des Prozesses, wurden GND Daten nichtmehr Live über Pazpar2 abgerufen, sondern extern extrahiert. Dies schließt Daten externer Anbieter derzeit aus, da dafür keine Daten erhoben wurden, in diesem Punkt kann nur eine Teilweise Erfüllung angesehen werden.
+Im Großen und Ganzen wurden alle Meilensteine abgearbeitet und umgesetzt. Dazu gehört das entwickeln eines Systems inkl. ElasticSearch Integration, der Prozessmodelierung und Abarbeitung, Entwicklung eines Persitenzmodels, Anlegen eines Jobsystems für asynchrone Tasks, Korrektur von Ergebnissen auf Basis von GND Daten.
+Aufgrund der Veränderung des Prozesses, wurden GND Daten nicht mehr Live über Pazpar2 abgerufen, sondern extern extrahiert. Dies schließt Daten externer Anbieter derzeit aus, da dafür keine Daten erhoben wurden, in diesem Punkt kann nur eine Teilweise Erfüllung angesehen werden.
 Die Technik dahinter ist jedoch vorhanden, so dass einfach weiteren Daten importiert werden können, wen diese erhoben wurden.
 Durch Zeitmangel vor allem am Ende des Projektes, wurde die Accountverwaltung nicht implementiert, diese war zwar immer optimal, war aber theoretisch im ersten Plan festgehalten.
 Der Export von Daten war theoretisch vorgesehen, wurde jedoch nicht umgesetzt, dies würde neu kalkuliert werden müssen.
