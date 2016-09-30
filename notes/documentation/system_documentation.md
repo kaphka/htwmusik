@@ -1,16 +1,17 @@
 # Anforderungen der Applikation
 Im folgenden soll kurz auf die hard- und softwareseitigen Anforderungen der Applikation eingegangen werden.
-## Hardware
-  Es wurde während der Entwicklung des Systems auf zwei Systemen folgender Spezifikationen gearbeitet:
 
-## System 1: Deployment
+## Hardware
+Es wurde während der Entwicklung des Systems auf zwei Systemen folgender Spezifikationen gearbeitet:
+
+### System 1: Deployment
 | Bauteil |  Beschreibung |
 | ------------ | -------------|
 | CPU | Intel Xeon E3-1225 V2 @3.20GHz (Quad Core) |
 | RAM | 16GB |
 | Festspeicher | 2TB HDD |
 
-## System 2: Development
+### System 2: Development
 | Bauteil |  Beschreibung |
 | ------------ | -------------|
 | CPU | Intel Core I7  @3.40GHz (Quad Core mit Hyper-Threading) |
@@ -21,11 +22,12 @@ Beide Systeme wurden zum Import und zur Aufbereitung der Daten genutzt und liefe
 
 Für den Produktiveinsatz mit dem Komplettsatz der Daten wäre allerdings mehr CPU-Leistung (mehr Kerne) sinnvoll, da die Import- und Korrekturprozesse auf den beiden oben gezeigten Systemen eher lange liefen.
 Aufgrund der hohen IO-Last während der Import- und Korrekturschritte des Sytems ist eine SSD einer normalen Festplatte vorzuziehen.
-## Software
-  Wie in einem der Meetings des zweiten Projektsemesters vereinbart, ist die Applikation sowie alle ihre Komponenten
-  vollständig kompatibel zur Linuxdistribution Debian 8 (Jessie).
 
-# Installation
+## Software
+Wie in einem der Meetings des zweiten Projektsemesters vereinbart, ist die Applikation sowie alle ihre Komponenten
+vollständig kompatibel zur Linuxdistribution Debian 8 (Jessie).
+
+## Installation
 Schritte zur einfachen Installation der Applikation auf einem Debian-System als user `root`:
 
 1. `wget https://raw.githubusercontent.com/albrechtsimon/htwmusic_webapp/master/puppet/bootstrap.sh`
@@ -54,7 +56,7 @@ Die Stammdaten für die Pfade in der Konfiguration, die während der Entwicklung
 
 ## Bootstrap
 Sobald die im vorangehenden Abschnitt vorgestellten Konfigurationsparameter gesetzt sind und die Applikation wie oben beschrieben installiert worden ist,
-kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
+kann ein (in diesem Falle synchroner) Import wie folgt angestoßen werden:
 
 1. `su - htwmusic`
 2. `cd htwmusic_webapp`
@@ -63,7 +65,7 @@ kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
 
 Sollte ein reiner Import ohne Lauf des Korrekturalgorithmus gewünscht sein, sollte als vierter Punkt stattdessen `bundle exec rake bootstrap2` ausgeführt werden.
 
-# Infrastruktur
+## Infrastruktur
 Die Hauptapplikation, welche auf Basis von Ruby on Rails 4 entwickelt worden ist, interagiert mit mehreren anderen Softwarekomponenten. Die Struktur während der
 Entwicklungsphase sowie die Deployment-Infrastruktur während der Entwicklung (kann in einem separaten Dokument betrachtet werden)[applikationsstruktur_deployment.md].
 
@@ -81,15 +83,15 @@ Nach dem zeiten Projektsemester sieht die Infrastuktur der Softwarekomponenten w
 | PostgreSQL | Persistenzschicht der Rails-Applikation | PostgreSQL nutzt seine Standardkonfiguration. Anpassungen möglich in `/etc/postgresql/$version/main/` |
 | Redis | Speicherort für Queues | Redis nutzt ebenfalls die Standardkonfiguration. Anpassungen möglich in `/etc/redis` |
 
-#Frontend
+# Frontend
 
-#Aufbau
+## Aufbau
 Die Basis für das Frontend bildet Rails. Rails dient einerseits als Backend und stellt mit der verwendeten Templateengine ERB alle Ansichten dar. ERB umfasst eine Templatesyntax, welche durch viele Funktionen und Modulen die Entwicklung vereinfacht. Für den Nutzer werden die entsprechenden Daten aufbereitet und abschließend ausgeliefert. Hierbei sind weitere Technologien eingebunden wie u.a. Bootstrap.
 
-#Gestaltung
-Die Gestaltung des Frontend orientiert sich einerseits an der Farbgebung der Webseite der Staatsbibliothek zu Berlin, andererseits an einer einfachen tasterturgebundenen Bedienung.
+## Gestaltung
+Die Gestaltung des Frontend orientiert sich einerseits an der Farbgebung der Webseite der Staatsbibliothek zu Berlin, andererseits an einer einfachen Tasterturgebundenen Bedienung.
 
-#Komponenten
+## Komponenten
 Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Abschnitt näher erläutert werden.
 
 ##Dashboard
@@ -133,7 +135,7 @@ Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst
 11. Speichern der derzeitigen Änderungen
 12. Speichern der derzeitigen Änderungen und Versiegeln der Karte
 
-###Korrektur
+## Korrektur
 Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch verarbeitet wurden. Hier ist ersichtlich aus welchen Verzeichnissen die gefundenen Daten erzeugt wurden und weshalb die Änderungen übernommen wurden.
 
 ![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/korrektur.jpg "Korrektur")
@@ -145,25 +147,19 @@ Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch vera
 5. Korrektur des Teilstückes
 6. Basis, auf dessen Grundlage das Teilstück korrigiert wurde.
 
-##Verbesserungen
-
-###Accountmanagement
-Das Frontend umfasst kein Accountmanagement. Auch wenn dies nicht genutzt werden soll, um einzelne Nutzer zu überwachen, wäre jedoch die Umsetzung nicht sonderlich kompliziert und würde die Anwendung für weitere Szenarien öffnen, beispielsweise Fremdleistungen.
-
-###Bildscrolling und 16:9
-Für die Ansicht wurde sich gewünscht das die Karte beim Scrollen durch die Felder immer sichtbar sein sollte. Dies wurde insofern abgeschwächt, das nun der restliche unbearbeitete Text unter den Feldern sichtbar ist. Hier müsste eruiert werden, ob und inwiefern die Umsetzung vom Bildmitlauf noch gewünscht wäre. Zudem wäre ein Breiteres Design möglich, da das derzeitige noch etwas Freiraum an den Seiten bietet. Es gab jedoch kein uns bekanntes Szenario das einen anderen Aufbau gerechtfertigt hätte. Hier könnten alternative entworfen werden.
 
 
-#Jobs
+## Jobs System
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
 Die Grundlage dafür bildet Resque, ein Queue System von GitHub https://github.com/resque/resque. Die nötigen Bestandteile von  Resque können durch entsprechende Gems in Rails integriert werden und sind so in der Lage auf entsprechende Ressourcen zuzugreifen.
 Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Workern abgearbeitet werden. Die hierfür nötigen Informationen, werden in Redis abgelegt.
 
-[Link: Tabelle zur Beschreibung der Jobs] (https://docs.google.com/spreadsheets/d/1IwCB8zNoQtqFbDTImsw28fltzyr2qQ-UGqOYK2JXJtU/edit#gid=0)
+[Link: Tabelle zur Beschreibung der Jobs](https://docs.google.com/spreadsheets/d/1IwCB8zNoQtqFbDTImsw28fltzyr2qQ-UGqOYK2JXJtU/edit#gid=0)
 
 ##Vorraussetzungen
 Für die Nutzung der Jobs sind folgende Bestandteile notwendig
-###Redis
+
+##Redis
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
 
@@ -243,8 +239,15 @@ Um die Verarbeitung einfacher zu gestalten, sollen Synonyme ersetzt werden, so d
 ####DataCrawler
 Als Erweiterung gedacht, jedoch bisher nicht weiter verfolgt. Sollte es notwendig sein Karten oder Daten nachträglich hinzuzufügen, sollte dies hier implementiert werden. Derzeitig wurde hier nur das Job verhalten der Worker getestet.
 
+### Korrekturalgorithmus
+Da die Texterkennung fehlerbehaftet ist, sollte ein Algorithmus entworfen werden, welcher die Fehler der OCR ausbessern sollte.
+Die Arbeitsweise des Algorithmus ist in folgender Grafik skizziert:
 
-## Datenquellen
+![Korrekturalgorithmus](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/diagramme/korrektur.jpg "Korrekturalgorithmus")
+
+Die Implementierung des Algorithmus kann im [Card-Model der Railsapplikation betrachtet werden](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/app/models/card.rb#L189).
+
+# Konvertierung der Datenquellen
 Bis jetzt nutzt das Projekt 4 Datenquellen:
 
   - OPAC-Bilder
@@ -284,18 +287,22 @@ Es werden lediglich Skripte bereitgestellt, dabei orientiert sich am Aufbau von 
 Die iPython-Notebooks dokumentieren das Trainings eines OCR-Modells, welches fuer das Skript process.py benoetigt wird.
 
 
-### Korrekturalgorithmus
-Da die Texterkennung fehlerbehaftet ist, sollte ein Algorithmus entworfen werden, welcher die Fehler der OCR ausbessern sollte.
-Die Arbeitsweise des Algorithmus ist in folgender Grafik skizziert:
-![Korrekturalgorithmus](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/korrektur.jpg "Korrekturalgorithmus")
 
-Die Implementierung des Algorithmus kann im [Card-Model der Railsapplikation betrachtet werden](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/app/models/card.rb#L189).
 
-### Verbesserungen
+# Verbesserungen
+
+## Accountmanagement
+Das Frontend umfasst kein Accountmanagement. Auch wenn dies nicht genutzt werden soll, um einzelne Nutzer zu überwachen, wäre jedoch die Umsetzung nicht sonderlich kompliziert und würde die Anwendung für weitere Szenarien öffnen, beispielsweise Fremdleistungen.
+
+## Bildscrolling und 16:9
+Für die Ansicht wurde sich gewünscht das die Karte beim Scrollen durch die Felder immer sichtbar sein sollte. Dies wurde insofern abgeschwächt, das nun der restliche unbearbeitete Text unter den Feldern sichtbar ist. Hier müsste eruiert werden, ob und inwiefern die Umsetzung vom Bildmitlauf noch gewünscht wäre. Zudem wäre ein Breiteres Design möglich, da das derzeitige noch etwas Freiraum an den Seiten bietet. Es gab jedoch kein uns bekanntes Szenario das einen anderen Aufbau gerechtfertigt hätte. Hier könnten alternative entworfen werden.
+
+
+## Korrekturalgorithmus
 Gerade der Korrekturalgorithmus ist einer der Punkte, an dem in der Fortführung des Projektes weitergearbeitet werden sollte. Mögliche Punkte, die hierbei
 bearbeitet werden könnten sind im Folgenden aufgeführt:
 
-#### Spracherkennung
+## Spracherkennung
 Die aktuelle Version des Algorithmus versucht unter anderem, wie im obigen Diagramm ersichtlich, Korrekturen für Worte anhand eines Wortindex zu finden.
 Dieser Index ist momentan nicht sprachabhänging implementiert. Das heißt, dass Worte aus unterschiedlichen Sprachen in einem Index liegen.
 
@@ -303,14 +310,14 @@ Man könnte nun versuchen, diesen Index sprachspezifisch aufzusplitten, sodass W
 Gegeben den Fall, es würde eine Methode gefunden, mit welcher ermittelt werden kann, in welcher Sprache der Text einer Karte verfasst ist oder auch
 welcher Sprache einzelne Wörter im OCR-Text angehören, könnte die Fehlerrate des Algorithmus gesenkt werden.
 
-#### Gewichtung von Treffern
+## Gewichtung von Treffern
 Die Implementierung des Wählens von Treffern einer Query an ElasticSearch ist momentan relativ primitiv. Werden Worte, die zur Korrektur herangezogen werden
 sollen, gleich oft gefunden, entscheidet sich der Algorithmus immer für den ersten Treffer. Durch dieses Vorgehen entstehen falsche Ersetzungen.
 
 Hier könnte versucht werden, weitere Metriken in den Algorithmus einfließen zu lassen, welche eine präzisere Auswahl einer korrekten Ersetzung ermöglichen.
 Der Punkt der Gewichtung könnte von der im vorangehenden Abschnitt angesprochenen Spracherkennung ebenfalls zugutekommen.
 
-#### Mehr Daten
+## Mehr Daten
 Während der Durchführung des Projektes sowie der Entwicklung des Algorithmus wurde auf einem relativ kleinen Datenset gearbeitet. Die Resultate, die das Verfahren zeigt,
 lassen darauf schließen, dass der Ansatz in die richtige Richtung geht. Dem Gesetz der großen Zahlen entsprechend wird es sicherlich so sein, dass
 die generelle Korrektheit der Ersetzungen mit dem Erhöhen der Grunddatenmenge steigen wird. Grunddatenmenge bezeichnet in diesem Kontext alles an textuellen Daten, die
@@ -321,25 +328,25 @@ der Algorithmus zum Abgleich heranzieht:
 * Personen
 * alle OCR Rohtexte
 
-#### Nutzen anderer Systeme zum Abgleich
+## Nutzen anderer Systeme zum Abgleich
 Ein Punkt, der im Verlauf des Projektes nicht mehr adressiert werden konnte, war der Abgleich der einzelnen der OCR entstammenden Worte Daten anderer Systeme.
 Würde man annehmen, dass die Drittquellendaten der Wahrheit entsprechen, könnte man mit den Daten dieser Quellen
 
 1. verhindern, dass bereits korrekte Worte durch Falsches ersetzt werden
 2. weitere Abgleiche anstellen, die beispielsweise in die Gewichtung der Korrekturkandidaten hineinspielen könnten.
 
-#### Rückfluss von Daten aus dem Frontend
+## Rückfluss von Daten aus dem Frontend
 Sollte das System in den Produktiveinsatz übergehen, wäre es sinnvoll, alle Korrekturen, die von Anwendern des Systems vorgenommen werden, zu speichern und als wahr und valide
 aufzufassen. Diese manuell eingegebenen Daten sollten wiederum in einen neuen Index in der Applikation einfließen, welcher bei der Bewertung von Treffern im Korrekturalgorithmus
 ein wesentlich höheres Gewicht als (vermutlich alle) anderen Indizes haben sollte. Dies würde zum einen die Fehlerrate des Systems verringern und zum anderen mittel- bis langfristig
 die Datenmenge auf die der Algorithmus mit Vertrauen zurückgreifen kann erhöhen und deren Qualität verbessern.
 
-###Modularität
+## Modularität
 Aufgrund von Problemen beim Import und der Verarbeitung der Karten, läuft der Korrekturprozess nicht Modular. Hier konnte keine kurzfristige und zufriedenstellende Lösung gefunden werden, Callbacks zu integrieren, so das Jobs anderen Jobs melden können, wenn diese durchlaufen wurden. Sollte dies umgesetzt sein, kann die Korrektur auch in einen Job ausgelagert werden. Dies gilt dann auch für das Replacement, erst dann wäre das Job System völlig asynchron. Derzeit sind nur nachgelagerte und vorgelagerte Prozesse in Jobs möglich.
 
 Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in einem Interval neue JobCreator-Jobs erzeugt, damit dieser wiederum neue nachfolgende Jobs erzeugt. Evtl w#äre es möglich hier einen besseren Ansatz zu finden.
 
-#### Datenbasis und Datenverarbeitung
+## Datenbasis und Datenverarbeitung
 Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke etc. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
 
 In Zukunft sollten zur Datenverarbeitung stärker auf leistungsfähigere Frameworks gesetzt werden.
@@ -347,7 +354,7 @@ Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechn
 Eine Umstellung auf ein Machine Learning framework würde es möglich machen GPU's zur Erkennung der Textzeilen zu nutzen. Ocropy nutzt bis jetzt "nur" eine CPU-Implementierung für die OCR.
 Eine Eigenentwicklung wird aber nicht mehr nötig sein sobald die Erkennung vom transkriptorium-Projekt übernommenen wird.
 
-#### Signaturgenauigkeit
+## Signaturgenauigkeit
 Derzeit sind Signaturen durch RegEx-Begriffe ausgezeichnet. Diese sind für Treffer sehr genau, zeigten jedoch, dass es durchaus Gemeinsamkeiten in der fehlerhaften Erkennung von Zeichen im OCR-Text gibt.
 So werden oft "S" oder "5" als jeweilige Partner vertauscht.
 Beispiel: "55 CD 131543" wird zu "5S CD 131S43"
@@ -356,19 +363,14 @@ eindeutige Signaturen sind derzeit sehr zuverlässig und können durch die Erset
 So lassen sich Signaturen wie DMS XX oder NUS XX leicht erkennen und lieferten im Test sehr gute Ergebnisse. Probleme bereiten vor allem sehr uneindeutige Signaturen wie CD oder sehr lange Signaturen, da die Fehlerrate mit der Länge der Signaturen zunimmt. Aufgrund dieser Tatsache, wäre es Ratsam, die Signaturen aus den Kartenbildern direkt zu extrahieren und so zumindest die Datenbasis, die derzeit beim ganzen OCR-Text liegt zu begrenzen. Mit unseren Mitteln, war dies jedoch bisher nicht möglich.
 Dies würde zumindest die Fehlerrate senken, die durch verdrehte Buchstabenkombinationen im Quelltext aufkommen.
 
-
-#Allgemeine Verbesserungen
-
-Dieses Kapitel umfasst alle Vorschläge zu Verbesserungen und Ideen, die sich nicht einem bestimmten Themengebiet zuordnen lassen.
-
-##Schnittstellen
+## Schnittstellen
 Derzeitig liegen alle Daten die erfasst wurden nur im System selbst vor, dies Umfasst die Datenbank, den ElasticSearch und die Kartenbilder selbst.
 Der Hauptaugenmerk lag in der allg. Verfügbarkeit und Machbarkeitsstudie des Projektes. Trotz Fehlerraten und Misserkennung wäre aber bereits eine Nutzung denkbar. Hierfür müssten Schnittstellen definiert werden über die diese Daten abgerufen werden könnten.
 
-##Nutzung der Daten
+## Nutzung der Daten
 Evtl. wären auch weitere Nutzungsszenarien denkbar, die bisher nicht in Erwägung gezogen wurden, da schlicht keine Daten außer den Bildern zur Verfügung standen. So wäre eine experimentelle Suche möglich die die Ergebnisse auf Wunsch dem allg. Datenbestand hinzufügt, um diese für die Öffentlichkeit zugänglich zu machen.
 
-#Meilensteine
+# Meilensteine
 Als agiles Projekt konzipiert und durchgeführt, änderten sich Teilaspekte durch anhaltende Wöchentliche Meetings, jedoch blieben die Ziele im allg. gleich.
 
 So definiert sich als Hauptziel, die Entwicklung eines Systems zur Verarbeitung von Kartenbildern und Überführung in ein System mit anschließender Fehlerkorrektur, Datenaufbereitung/Visualisierung, sowie evtl. Datenextraktion.
@@ -396,7 +398,7 @@ Der Export von Daten war theoretisch vorgesehen, wurde jedoch nicht umgesetzt, d
 
 
 
-#Ergebnisse
+# Ergebnisse
 
 Für das Masterprojekt 1 und 2 wurde ein System Entwickelt, das aufzeigt, dass eine automatisierte Erfassung technisch möglich ist. So wurden Bilder in Texte umgewandelt und anschließend versucht, diese zu korrigieren, um abschließend Daten aus diesen gewinnen zu können.
 Die Ergebnisse sind sehr stark abhängig vom gewählten Katalog und der Qualität desselben. So spielte auch die Sprache eine große Rolle, da die OCR ursprünglich auf Englischem Text trainiert wurde. Dies führt zu einer verschobenen Spracherkennung. Dies kann mit mehr validen Trainingsdaten umgangen werden, wofür jedoch eine händische Erfassung notwendig wäre. Dies wäre deshalb voraussichtlich ein Problem an Ressourcen.
