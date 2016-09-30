@@ -242,7 +242,7 @@ Die Notebooks enthalten Untersuchungen über die Daten und unterschiedliche Konv
  Diese Schritte müssen im dauerhaften betrieb der Anwendung nicht mehr ausgeführt werden
 
 ## [labelconv](https://github.com/kaphka/labelconv)
-![labelconv_screenshot](pictures/labelconv.png)
+![labelconv_screenshot](https://raw.githubusercontent.com/kaphka/htwmusik/master/notes/documentation/pictures/labelconv.png)
 
 labelconv ist ein simples Tool um Trainingsdaten für die OCR zu erstellen.
 Im Gegensatz zu den hOCR-Tools von ocropy bietet dieses Tool Features um besser mit den Katalogdatensatz zu arbeiten.
