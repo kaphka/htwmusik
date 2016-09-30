@@ -18,21 +18,21 @@
 	- [Kartenübersicht](#kartenübersicht)
 		- [Felderübersicht](#felderübersicht)
 	- [Korrektur](#korrektur)
-	- [Jobs System](#jobs-system)
-		- [Vorraussetzungen](#vorraussetzungen)
+- [Jobs System](#jobs-system)
+	- [Vorraussetzungen](#vorraussetzungen)
 		- [Redis](#redis)
-			- [Resque](#resque)
-			- [Datenbankadapter](#datenbankadapter)
-			- [Überblick](#überblick)
-				- [CardFactory](#cardfactory)
-				- [ExternalWorkLookup](#externalworklookup)
-				- [ExternalInterpreterLookup](#externalinterpreterlookup)
-				- [SignatureLookup](#signaturelookup)
-				- [FieldReplacer](#fieldreplacer)
-				- [JobCreator](#jobcreator)
-				- [AcronymReplacer](#acronymreplacer)
-				- [DataCrawler](#datacrawler)
-			- [Korrekturalgorithmus](#korrekturalgorithmus)
+		- [Resque](#resque)
+		- [Datenbankadapter](#datenbankadapter)
+	- [Überblick](#überblick)
+		- [CardFactory](#cardfactory)
+		- [ExternalWorkLookup](#externalworklookup)
+		- [ExternalInterpreterLookup](#externalinterpreterlookup)
+		- [SignatureLookup](#signaturelookup)
+		- [FieldReplacer](#fieldreplacer)
+		- [JobCreator](#jobcreator)
+		- [AcronymReplacer](#acronymreplacer)
+		- [DataCrawler](#datacrawler)
+- [Korrekturalgorithmus](#korrekturalgorithmus)
 - [Konvertierung der Datenquellen](#konvertierung-der-datenquellen)
 	- [[nbconv](https://github.com/kaphka/nbconv)](#nbconvhttpsgithubcomkaphkanbconv)
 	- [[labelconv](https://github.com/kaphka/labelconv)](#labelconvhttpsgithubcomkaphkalabelconv)
@@ -210,7 +210,7 @@ Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch vera
 
 
 
-## Jobs System
+# Jobs System
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
 Die Grundlage dafür bildet Resque, ein Queue System von GitHub https://github.com/resque/resque. Die nötigen Bestandteile von  Resque können durch entsprechende Gems in Rails integriert werden und sind so in der Lage auf entsprechende Ressourcen zuzugreifen.
 Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Workern abgearbeitet werden. Die hierfür nötigen Informationen werden in Redis abgelegt.
@@ -220,7 +220,7 @@ Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Wo
 ###Vorraussetzungen
 Für die Nutzung der Jobs sind folgende Bestandteile notwendig.
 
-###Redis
+####Redis
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
 
@@ -237,7 +237,7 @@ Zu beachten ist, dass nur Parameter abgelegt werden können, die in einen JSON u
 Näheres dazu in der Dokumentation von Resque und Redis https://github.com/resque/resque
 
 
-###Resque
+####Resque
 Resque ist ein Job System, welches die Bestandteile von Redis nutzt, um Jobs zu erzeugen und auszuführen.
 Jobs können generell alle Klassen sein die eine `perform()` Methode anbieten, es empfiehlt sich diese jedoch separat zu strukturieren.
 Jobs im Projekt liegen in lib/processing/jobs
@@ -254,7 +254,7 @@ Für die Verwaltung bietet Resque gleich eine Schnitstelle im Frontend mit. Dies
 
 aufrufen und bietet eine Übersicht, die zumeist für das debuggen ausreichte. Näheres dazu in der Dokumentation von Resque.
 
-###Datenbankadapter
+####Datenbankadapter
 Es ist notwendig das eine persistente Datenbank zur Verfügung steht, diese muss in Rails definiert sein, da Resque im default diese für seine Jobs benutzt.
 In der Entwicklung wurden MySql und Postgress verwendet. Theoretisch sind auch andere denkbar.
 
@@ -300,7 +300,7 @@ Um die Verarbeitung einfacher zu gestalten, sollen Synonyme ersetzt werden, so d
 ####DataCrawler
 Als Erweiterung gedacht, jedoch bisher nicht weiter verfolgt. Sollte es notwendig sein Karten oder Daten nachträglich hinzuzufügen, sollte dies hier implementiert werden. Derzeitig wurde hier nur das Job verhalten der Worker getestet.
 
-### Korrekturalgorithmus
+# Korrekturalgorithmus
 Da die Texterkennung fehlerbehaftet ist, sollte ein Algorithmus entworfen werden, welcher die Fehler der OCR ausbessern sollte.
 Die Arbeitsweise des Algorithmus ist in folgender Grafik skizziert:
 
