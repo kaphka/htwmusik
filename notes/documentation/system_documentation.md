@@ -175,21 +175,24 @@ Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in e
 Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke ect. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
 
 ####Signaturgenauigkeit
-Derzeit sind Signaturen durch RegExbegriffe ausgezeichnet. Diese sind für treffer sdehr genau, zeigten jedoch das es durchaus gemeinsamkeiten i nder Fehlerhaften erkennung von Zeichen im OCR-Text gibt. 
+Derzeit sind Signaturen durch RegEx-Begriffe ausgezeichnet. Diese sind für Treffer sehr genau, zeigten jedoch, dass es durchaus Gemeinsamkeiten in der fehlerhaften Erkennung von Zeichen im OCR-Text gibt. 
 So werden oft "S" oder "5" als jeweilige Partner vertauscht. 
 Beispiel: "55 CD 131543" wird zu "5S CD 131S43"
-Durch diesne umstand ist es schwierig korrekte Signaturen umzusetzen, dies liegt vorallem daran, das Signaturen teilweise mehrdeutige Schreibweisen besitzen, so exestieren 55 CD XX, sowei CD XX. Eine Fehlerkennung ist deshalb nicht ausgeschlossen, wen ndie vorangestellten Zeichen nicht richtig durch die OCR erkannt wurden.
-eindeutige Signaturen sidn derzeit sehr zuverlässig und können durch die Ersetzungsregeln auch dann gefunden werden, wenn diese Fehlerbuchstaben enthalten.
-So lassen sich Signaturen wie DMS XX oder NUS XX leicht erkennen und lieferten im Test sehr gute Ergebnisse. Probleme bereiten vorallem sehr uneindeutige Signaturen wie CD oder sehr lange Signaturen, da die Fehlerrate mit der Länge der Signaturen zunimmt. Aufgrund dieser Tatsache, wäre es Ratsam, die Signaturen aus den Kartenbildern direkt zu extraieren und so zumindest die Datenbasis, die derzeit beim ganzen OCR-Text liegt zu begrenzen. Mit unseren Mitteln, war dies jedoch bisher nicht möglich.
+Durch diesen Umstand ist es schwierig korrekte Signaturen umzusetzen, dies liegt vor allem daran, dass Signaturen teilweise mehrdeutige Schreibweisen besitzen, so existieren 55 CD XX, sowie CD XX. Eine Fehlerkennung ist deshalb nicht ausgeschlossen, wenn die vorangestellten Zeichen nicht richtig durch die OCR erkannt wurden.
+eindeutige Signaturen sind derzeit sehr zuverlässig und können durch die Ersetzungsregeln auch dann gefunden werden, wenn diese Fehlerbuchstaben enthalten.
+So lassen sich Signaturen wie DMS XX oder NUS XX leicht erkennen und lieferten im Test sehr gute Ergebnisse. Probleme bereiten vor allem sehr uneindeutige Signaturen wie CD oder sehr lange Signaturen, da die Fehlerrate mit der Länge der Signaturen zunimmt. Aufgrund dieser Tatsache, wäre es Ratsam, die Signaturen aus den Kartenbildern direkt zu extrahieren und so zumindest die Datenbasis, die derzeit beim ganzen OCR-Text liegt zu begrenzen. Mit unseren Mitteln, war dies jedoch bisher nicht möglich.
 Dies würde zumindest die Fehlerrate senken, die durch verdrehte Buchstabenkombinationen im Quelltext aufkommen.
+
+
+
 
 #Allgemeine Verbesserungen
 
-Dieses Kapietel umfasst alle Vorschläge zu Verbesserungen, die sich nicht einem bestimmten Themengebiet zuordnen lassen.
+Dieses Kapitel umfasst alle Vorschläge zu Verbesserungen und Ideen, die sich nicht einem bestimmten Themengebiet zuordnen lassen.
 
-##Schnitstellen
+##Schnittstellen
 Derzeitig liegen alle Daten die erfasst wurden nur im System selbst vor, dies Umfasst die Datenbank, den ElasticSearch und die Kartenbilder selbst.
-Der Hauptaugenmerk lag in der allg. Verfügbarkeit und Machbarkeitsstudie des Projektes. Trotz Fehlerraten und Misserkennung wäre aber bereits eine Nutzung denkbar. Hierfür müssten Schnitstellen defeniert werden über die diese Daten abgerufen werden könnten.
+Der Hauptaugenmerk lag in der allg. Verfügbarkeit und Machbarkeitsstudie des Projektes. Trotz Fehlerraten und Misserkennung wäre aber bereits eine Nutzung denkbar. Hierfür müssten Schnittstellen definiert werden über die diese Daten abgerufen werden könnten.
 
 ##Nutzung der Daten
-Evtl. wären auch weitere Nutzungsszenarien denkbar, die bisher nicht in erwägung geziogen wurden, da schlicht keine Daten außer den Bildern zur Verfügung standen. So wäre eien experementelle Suche möglich die die Ergebnisse auf wunsch dem allg Datenbestand hinzufügt, um diese für die öffentlichkeit zugänglich zu machen.
+Evtl. wären auch weitere Nutzungsszenarien denkbar, die bisher nicht in Erwägung gezogen wurden, da schlicht keine Daten außer den Bildern zur Verfügung standen. So wäre eine experimentelle Suche möglich die die Ergebnisse auf Wunsch dem allg. Datenbestand hinzufügt, um diese für die Öffentlichkeit zugänglich zu machen.
