@@ -282,10 +282,16 @@ Es werden lediglich Skripte bereitgestellt, dabei orientiert sich am Aufbau von 
 Die iPython-Notebooks dokumentieren das Trainings eines OCR-Modells, welches fuer das Skript process.py benoetigt wird.
 
 
+### Korrekturalgorithmus
+Da die Texterkennung fehlerbehaftet ist, sollte ein Algorithmus entworfen werden, welcher die Fehler der OCR ausbessern sollte.
+Die Arbeitsweise des Algorithmus ist in folgender Grafik skizziert:
+![Korrekturalgorithmus](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/korrektur.jpg "Korrekturalgorithmus")
+
+Die Implementierung des Algorithmus kann im [Card-Model der Railsapplikation betrachtet werden](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/app/models/card.rb#L189).
 
 ###Verbesserungen
 
-####Modularität
+###Modularität
 Aufgrund von Problemen beim Import und der Verarbeitung der Karten, läuft der Korrekturprozess nicht Modular. Hier konnte keine kurzfristige und zufriedenstellende Lösung gefunden werden, Callbacks zu integrieren, so das Jobs anderen Jobs melden können, wenn diese durchlaufen wurden. Sollte dies umgesetzt sein, kann die Korrektur auch in einen Job ausgelagert werden. Dies gilt dann auch für das Replacement, erst dann wäre das Job System völlig asynchron. Derzeit sind nur nachgelagerte und vorgelagerte Prozesse in Jobs möglich.
 
 Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in einem Interval neue JobCreator-Jobs erzeugt, damit dieser wiederum neue nachfolgende Jobs erzeugt. Evtl w#äre es möglich hier einen besseren Ansatz zu finden.
@@ -293,8 +299,8 @@ Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in e
 #### Datenbasis und Datenverarbeitung
 Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke etc. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
 
-In Zukunft sollten zur Datenverarbeitung stärker auf leistungsfähigere Framkeworks gesetzt werden.
-Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechner mit einem Framekwork wie [Spark](https://spark.apache.org/) vorteile bringen.
+In Zukunft sollten zur Datenverarbeitung stärker auf leistungsfähigere Frameworks gesetzt werden.
+Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechner mit einem Framekwork wie [Spark](https://spark.apache.org/) Vorteile bringen.
 Eine Umstellung auf ein Machine Learning framework würde es möglich machen GPU's zur Erkennung der Textzeilen zu nutzen. Ocropy nutzt bis jetzt "nur" eine CPU-Implementierung für die OCR.
 Eine Eigenentwicklung wird aber nicht mehr nötig sein sobald die Erkennung vom transkriptorium-Projekt übernommenen wird.
 
