@@ -51,6 +51,15 @@ auf das jeweilige System anpassbar. Die folgende Tabelle beschreibt die Konfigur
 | `data_limit` | Ganzzahl. Beschreibt, nach wie vielen Records der Datenimport beendet werden soll. |
 
 ## Bootstrap
+Sobald die im vorangehenden Abschnitt vorgestellten Konfigurationsparameter gesetzt sind und die Applikation wie oben beschrieben installiert worden ist,
+kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
+
+1. `su - htwmusic`
+2. `cd htwmusic_webapp`
+3. `export RAILS_ENV=production`
+4. `bundle exec rake bootstrap`
+
+Sollte ein reiner Import ohne Lauf des Korrekturalgorithmus gewünscht sein, sollte als vierter Punkt stattdessen `bundle exec rake bootstrap2` ausgeführt werden.
 
 #Frontend
 
