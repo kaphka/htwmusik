@@ -38,7 +38,7 @@ Die Kartenübersicht bildet alle gefundenen und verarbeiteten  Daten ab. Diese w
 ###Felderübersicht
 Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst, sowie der erkannte OCR-Text. 
 
-![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/f7524b64e9d6b3f16725bdc42d2a4883f52b56d7/bilder/frontend.jpg "Frontend 1")
+![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/frontend.jpg "Frontend 1")
 
 1. Auswahl der derzeitigen Übersicht
 2. Status der derzeitigen Karte
@@ -79,7 +79,7 @@ Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System ei
 Die Grundlage dafür bildet Resque, ein Queue System von GitHub https://github.com/resque/resque. Die nötigen Bestandteile von  Resque können durch entsprechende Gems in Rails integriert werden und sind so in der Lage auf entsprechende Ressourcen zuzugreifen.
 Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Workern abgearbeitet werden. Die hierfür nötigen Informationen, werden in Redis abgelegt.
 
-https://docs.google.com/spreadsheets/d/1IwCB8zNoQtqFbDTImsw28fltzyr2qQ-UGqOYK2JXJtU/edit#gid=0
+[Link: Tabelle zur Beschreibung der Jobs] (https://docs.google.com/spreadsheets/d/1IwCB8zNoQtqFbDTImsw28fltzyr2qQ-UGqOYK2JXJtU/edit#gid=0)
 
 ##Vorraussetzungen
 Für die Nutzung der Jobs sind folgende Bestandteile notwendig
@@ -164,6 +164,47 @@ Um die Verarbeitung einfacher zu gestalten, sollen Synonyme ersetzt werden, so d
 Als Erweiterung gedacht, jedoch bisher nicht weiter verfolgt. Sollte es notwendig sein Karten oder Daten nachträglich hinzuzufügen, sollte dies hier implementiert werden. Derzeitig wurde hier nur das Job verhalten der Worker getestet.
 
 
+## Datenquellen
+Bis jetzt nutzt das Projekt 4 Datenquellen:
+
+  - OPAC-Bilder
+  - OPAC-Indexierung
+  - GND
+  - Labeldaten
+
+Im folgenden werden die Tools für die Verarbeitung der Daten dokumentiert.
+
+## [nbconv](https://github.com/kaphka/nbconv)
+nbconv ist eine Sammlung von iPython-Notebooks
+Die Notebooks enthalten Untersuchungen über die Daten und unterschiedliche Konvertierungsskript und API-Anleitungen
+ Die Datei [ocr_error_rates.ipynb](https://github.com/kaphka/nbconv/blob/master/analysis/ocr_error_rates.ipynb) erzeugt die Graphen für das IMI-Showtime-Poster.
+ Das Skript [index-database2json.ipynb](https://github.com/kaphka/nbconv/blob/master/export/index-database2json.ipynb) exportiert die Indexierungs-Daten als JSON-Dateien.
+ Diese Schritte müssen im dauerhaften betrieb der Anwendung nicht mehr ausgeführt werden
+
+## [labelconv](https://github.com/kaphka/labelconv)
+![labelconv_screenshot](pictures/labelconv.png)
+
+labelconv ist ein simples Tool um Trainingsdaten für die OCR zu erstellen.
+Im Gegensatz zu den hOCR-Tools von ocropy bietet dieses Tool Features um besser mit den Katalogdatensatz zu arbeiten.
+Es kann ein Seed für die zufällige Auswahl von Textzeilen festgelegt werden. 
+Danach wird im Browser ein Sample aus dem jeweiligen Katalog gezeigt. So können unabhängige Samples zum trainieren und zum testen erstellt werden.
+
+## [semconv](https://github.com/kaphka/semconv)
+Dieses Skript dient der Datensammlung zur Verbesserung des Erschliessungsprozesses.
+Die Extrahierung der Daten aus der GND ist ein größeres Thema als gedacht und dieses Skript liefert lediglich einen Ausgangspunkt.
+
+## [catconv](https://github.com/kaphka/catconv)
+Das Modul ist zuständig für die Konvertierung der Katalogkarten.
+Es werden lediglich Skripte bereitgestellt, dabei orientiert sich am Aufbau von Ocropy (kein Zustand, kleine Programme mit nur einer Aufgabe).
+
+- convert.py: Umwandlung von TIF zu jpgs.
+- process.py: Vorprozessierung//Binarisierung
+- export.py:  Umwandlung ins Exportformat
+
+Die iPython-Notebooks dokumentieren das Trainings eines OCR-Modells, welches fuer das Skript process.py benoetigt wird. 
+
+
+
 ###Verbesserungen
 
 ####Modularität
@@ -171,10 +212,15 @@ Aufgrund von Problemen beim Import und der Verarbeitung der Karten, läuft der K
 
 Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in einem Interval neue JobCreator-Jobs erzeugt, damit dieser wiederum neue nachfolgende Jobs erzeugt. Evtl w#äre es möglich hier einen besseren Ansatz zu finden.
 
-####Datenbasis
-Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke ect. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
+#### Datenbasis und Datenverarbeitung
+Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke etc. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
+ 
+In Zukunft sollten zur Datenverarbeitung stärker auf leistungsfähigere Framkeworks gesetzt werden.
+Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechner mit einem Framekwork wie [Spark](https://spark.apache.org/) vorteile bringen. 
+Eine Umstellung auf ein Machine Learning framework würde es möglich machen GPU's zur Erkennung der Textzeilen zu nutzen. Ocropy nutzt bis jetzt "nur" eine CPU-Implementierung für die OCR. 
+Eine Eigenentwicklung wird aber nicht mehr nötig sein sobald die Erkennung vom transkriptorium-Projekt übernommenen wird.
 
-####Signaturgenauigkeit
+#### Signaturgenauigkeit
 Derzeit sind Signaturen durch RegEx-Begriffe ausgezeichnet. Diese sind für Treffer sehr genau, zeigten jedoch, dass es durchaus Gemeinsamkeiten in der fehlerhaften Erkennung von Zeichen im OCR-Text gibt. 
 So werden oft "S" oder "5" als jeweilige Partner vertauscht. 
 Beispiel: "55 CD 131543" wird zu "5S CD 131S43"
@@ -182,8 +228,6 @@ Durch diesen Umstand ist es schwierig korrekte Signaturen umzusetzen, dies liegt
 eindeutige Signaturen sind derzeit sehr zuverlässig und können durch die Ersetzungsregeln auch dann gefunden werden, wenn diese Fehlerbuchstaben enthalten.
 So lassen sich Signaturen wie DMS XX oder NUS XX leicht erkennen und lieferten im Test sehr gute Ergebnisse. Probleme bereiten vor allem sehr uneindeutige Signaturen wie CD oder sehr lange Signaturen, da die Fehlerrate mit der Länge der Signaturen zunimmt. Aufgrund dieser Tatsache, wäre es Ratsam, die Signaturen aus den Kartenbildern direkt zu extrahieren und so zumindest die Datenbasis, die derzeit beim ganzen OCR-Text liegt zu begrenzen. Mit unseren Mitteln, war dies jedoch bisher nicht möglich.
 Dies würde zumindest die Fehlerrate senken, die durch verdrehte Buchstabenkombinationen im Quelltext aufkommen.
-
-
 
 
 #Allgemeine Verbesserungen
