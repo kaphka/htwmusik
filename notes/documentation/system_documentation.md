@@ -1,3 +1,64 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Anforderungen der Applikation](#anforderungen-der-applikation)
+	- [Hardware](#hardware)
+		- [System 1: Deployment](#system-1-deployment)
+		- [System 2: Development](#system-2-development)
+	- [Software](#software)
+	- [Installation](#installation)
+	- [Konfiguration](#konfiguration)
+	- [Bootstrap](#bootstrap)
+	- [Infrastruktur](#infrastruktur)
+- [Frontend](#frontend)
+	- [Aufbau](#aufbau)
+	- [Gestaltung](#gestaltung)
+	- [Komponenten](#komponenten)
+	- [Dashboard](#dashboard)
+	- [Filterungslisten](#filterungslisten)
+	- [Kartenübersicht](#kartenübersicht)
+		- [Felderübersicht](#felderübersicht)
+	- [Korrektur](#korrektur)
+	- [Jobs System](#jobs-system)
+	- [Vorraussetzungen](#vorraussetzungen)
+	- [Redis](#redis)
+		- [Resque](#resque)
+		- [Datenbankadapter](#datenbankadapter)
+		- [Überblick](#überblick)
+			- [CardFactory](#cardfactory)
+			- [ExternalWorkLookup](#externalworklookup)
+			- [ExternalInterpreterLookup](#externalinterpreterlookup)
+			- [SignatureLookup](#signaturelookup)
+			- [FieldReplacer](#fieldreplacer)
+			- [JobCreator](#jobcreator)
+			- [AcronymReplacer](#acronymreplacer)
+			- [DataCrawler](#datacrawler)
+		- [Korrekturalgorithmus](#korrekturalgorithmus)
+- [Konvertierung der Datenquellen](#konvertierung-der-datenquellen)
+	- [[nbconv](https://github.com/kaphka/nbconv)](#nbconvhttpsgithubcomkaphkanbconv)
+	- [[labelconv](https://github.com/kaphka/labelconv)](#labelconvhttpsgithubcomkaphkalabelconv)
+	- [[semconv](https://github.com/kaphka/semconv)](#semconvhttpsgithubcomkaphkasemconv)
+	- [[catconv](https://github.com/kaphka/catconv)](#catconvhttpsgithubcomkaphkacatconv)
+- [Verbesserungen](#verbesserungen)
+	- [Accountmanagement](#accountmanagement)
+	- [Bildscrolling und 16:9](#bildscrolling-und-169)
+	- [Korrekturalgorithmus](#korrekturalgorithmus)
+	- [Spracherkennung](#spracherkennung)
+	- [Gewichtung von Treffern](#gewichtung-von-treffern)
+	- [Mehr Daten](#mehr-daten)
+	- [Nutzen anderer Systeme zum Abgleich](#nutzen-anderer-systeme-zum-abgleich)
+	- [Rückfluss von Daten aus dem Frontend](#rückfluss-von-daten-aus-dem-frontend)
+	- [Modularität](#modularität)
+	- [Datenbasis und Datenverarbeitung](#datenbasis-und-datenverarbeitung)
+	- [Signaturgenauigkeit](#signaturgenauigkeit)
+	- [Schnittstellen](#schnittstellen)
+	- [Nutzung der Daten](#nutzung-der-daten)
+- [Meilensteine](#meilensteine)
+	- [OCR](#ocr)
+	- [Korrektur](#korrektur)
+- [Ergebnisse](#ergebnisse)
+
+<!-- /TOC -->
+
 # Anforderungen der Applikation
 Im folgenden soll kurz auf die hard- und softwareseitigen Anforderungen der Applikation eingegangen werden.
 
@@ -380,9 +441,9 @@ Die Meilensteine definieren sich aus dem aktuellsten Wochenplan, der für das Pr
 
 ## OCR
 
-Die grundlegende Aufgabe der Verbesserung und Automatisierung der OCR konnte konsequent bearbeitet. 
-Im Verlauf der Arbeit wurde klar das die Fehlerraten, die in vielen Publikationen 
-berichtet werden, nicht in realen Datensets erreicht werden können. 
+Die grundlegende Aufgabe der Verbesserung und Automatisierung der OCR konnte konsequent bearbeitet.
+Im Verlauf der Arbeit wurde klar das die Fehlerraten, die in vielen Publikationen
+berichtet werden, nicht in realen Datensets erreicht werden können.
 Es wurden neben der OCR auch an weiteren Methoden zur Datenextrahierung gearbeitet wie zum Beispiel
 die Erkennung der Kartensprache und des Kartentyps.
 Jedoch kann man diese Daten nur weiterverarbeiten, wenn man auch die Genauigkeit validiert,
