@@ -22,7 +22,7 @@ Beide Systeme wurden zum Import und zur Aufbereitung der Daten genutzt und liefe
 Für den Produktiveinsatz mit dem Komplettsatz der Daten wäre allerdings mehr CPU-Leistung (mehr Kerne) sinnvoll, da die Import- und Korrekturprozesse auf den beiden oben gezeigten Systemen eher lange liefen.
 Aufgrund der hohen IO-Last während der Import- und Korrekturschritte des Sytems ist eine SSD einer normalen Festplatte vorzuziehen.
 ## Software
-  Wie in einem der Meetings des zweiten Projektsemesterse vereinbart, ist die Applikation sowie alle ihre Komponenten
+  Wie in einem der Meetings des zweiten Projektsemesters vereinbart, ist die Applikation sowie alle ihre Komponenten
   vollständig kompatibel zur Linuxdistribution Debian 8 (Jessie).
 
 # Installation
