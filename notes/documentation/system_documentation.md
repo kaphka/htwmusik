@@ -289,7 +289,48 @@ Die Arbeitsweise des Algorithmus ist in folgender Grafik skizziert:
 
 Die Implementierung des Algorithmus kann im [Card-Model der Railsapplikation betrachtet werden](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/app/models/card.rb#L189).
 
-###Verbesserungen
+### Verbesserungen
+Gerade der Korrekturalgorithmus ist einer der Punkte, an dem in der Fortführung des Projektes weitergearbeitet werden sollte. Mögliche Punkte, die hierbei
+bearbeitet werden könnten sind im Folgenden aufgeführt:
+
+#### Spracherkennung
+Die aktuelle Version des Algorithmus versucht unter anderem, wie im obigen Diagramm ersichtlich, Korrekturen für Worte anhand eines Wortindex zu finden.
+Dieser Index ist momentan nicht sprachabhänging implementiert. Das heißt, dass Worte aus unterschiedlichen Sprachen in einem Index liegen.
+
+Man könnte nun versuchen, diesen Index sprachspezifisch aufzusplitten, sodass Worte einer Sprache jeweils in ihrem eigenen Index liegen.
+Gegeben den Fall, es würde eine Methode gefunden, mit welcher ermittelt werden kann, in welcher Sprache der Text einer Karte verfasst ist oder auch
+welcher Sprache einzelne Wörter im OCR-Text angehören, könnte die Fehlerrate des Algorithmus gesenkt werden.
+
+#### Gewichtung von Treffern
+Die Implementierung des Wählens von Treffern einer Query an ElasticSearch ist momentan relativ primitiv. Werden Worte, die zur Korrektur herangezogen werden
+sollen, gleich oft gefunden, entscheidet sich der Algorithmus immer für den ersten Treffer. Durch dieses Vorgehen entstehen falsche Ersetzungen.
+
+Hier könnte versucht werden, weitere Metriken in den Algorithmus einfließen zu lassen, welche eine präzisere Auswahl einer korrekten Ersetzung ermöglichen.
+Der Punkt der Gewichtung könnte von der im vorangehenden Abschnitt angesprochenen Spracherkennung ebenfalls zugutekommen.
+
+#### Mehr Daten
+Während der Durchführung des Projektes sowie der Entwicklung des Algorithmus wurde auf einem relativ kleinen Datenset gearbeitet. Die Resultate, die das Verfahren zeigt,
+lassen darauf schließen, dass der Ansatz in die richtige Richtung geht. Dem Gesetz der großen Zahlen entsprechend wird es sicherlich so sein, dass
+die generelle Korrektheit der Ersetzungen mit dem Erhöhen der Grunddatenmenge steigen wird. Grunddatenmenge bezeichnet in diesem Kontext alles an textuellen Daten, die
+der Algorithmus zum Abgleich heranzieht:
+
+* einzelne Worte
+* Werke
+* Personen
+* alle OCR Rohtexte
+
+#### Nutzen anderer Systeme zum Abgleich
+Ein Punkt, der im Verlauf des Projektes nicht mehr adressiert werden konnte, war der Abgleich der einzelnen der OCR entstammenden Worte Daten anderer Systeme.
+Würde man annehmen, dass die Drittquellendaten der Wahrheit entsprechen, könnte man mit den Daten dieser Quellen
+
+1. verhindern, dass bereits korrekte Worte durch Falsches ersetzt werden
+2. weitere Abgleiche anstellen, die beispielsweise in die Gewichtung der Korrekturkandidaten hineinspielen könnten.
+
+#### Rückfluss von Daten aus dem Frontend
+Sollte das System in den Produktiveinsatz übergehen, wäre es sinnvoll, alle Korrekturen, die von Anwendern des Systems vorgenommen werden, zu speichern und als wahr und valide
+aufzufassen. Diese manuell eingegebenen Daten sollten wiederum in einen neuen Index in der Applikation einfließen, welcher bei der Bewertung von Treffern im Korrekturalgorithmus
+ein wesentlich höheres Gewicht als (vermutlich alle) anderen Indizes haben sollte. Dies würde zum einen die Fehlerrate des Systems verringern und zum anderen mittel- bis langfristig
+die Datenmenge auf die der Algorithmus mit Vertrauen zurückgreifen kann erhöhen und deren Qualität verbessern.
 
 ###Modularität
 Aufgrund von Problemen beim Import und der Verarbeitung der Karten, läuft der Korrekturprozess nicht Modular. Hier konnte keine kurzfristige und zufriedenstellende Lösung gefunden werden, Callbacks zu integrieren, so das Jobs anderen Jobs melden können, wenn diese durchlaufen wurden. Sollte dies umgesetzt sein, kann die Korrektur auch in einen Job ausgelagert werden. Dies gilt dann auch für das Replacement, erst dann wäre das Job System völlig asynchron. Derzeit sind nur nachgelagerte und vorgelagerte Prozesse in Jobs möglich.
