@@ -50,6 +50,8 @@ auf das jeweilige System anpassbar. Die folgende Tabelle beschreibt die Konfigur
 | `debug_output` | Boolean. Gibt an, ob die Applikation beim Importprozess Debuginformationen ausgeben soll oder nicht |
 | `data_limit` | Ganzzahl. Beschreibt, nach wie vielen Records der Datenimport beendet werden soll. |
 
+Die Stammdaten für die Pfade in der Konfiguration, die während der Entwicklung verwendet worden sind, sind [hier](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/lib/base_data.zip) auffindbar.
+
 ## Bootstrap
 Sobald die im vorangehenden Abschnitt vorgestellten Konfigurationsparameter gesetzt sind und die Applikation wie oben beschrieben installiert worden ist,
 kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
