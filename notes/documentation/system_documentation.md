@@ -2,6 +2,16 @@
 
 
 #Frontend 
+
+#Aufbau
+Die Basis für das Frontend bildet Rails. Rails dient einerseits als Backend und stellt mit der verwendeten Templateengine ERB alle Ansichten dar. ERB umfasst eine Templatesyntax, welche durch viele Funktionen und Modulen die Entwicklung vereinfacht. Für den Nutzer werden die entsprechenden Daten aufbereitet und abschließend ausgeliefert. Hierbei sind weitere Technologien eingebunden wie u.a. Bootstrap.
+
+#Gestaltung
+Die Gestaltung des Frontends orientiert sich einerseits an der Farbgebung der Webseite der Staatsbibliothek zu Berlin, andererseits an einer einfachen tasterturgebundenen Bedienung.
+
+Die Bedienung und Gestaltung wurde zudem Umfangreich in Meetings besprochen und kann als final angesehen werden, auch wenn es evtl Verbesserungsvorschläge gibt.
+
+#Komponenten
 Das Frontend setzt sich aus drei Komponenten zusammen, die im Nachfolgenden Abschnitt näher erläutert werden.
 
 ##Dashboard
@@ -56,6 +66,13 @@ Der Korrketurtab zeigt alle Änderungen die durch die Korrektur automatisch vera
 4. Teilstück das als Korrekturvorlage diente
 5. Korrektur des Teilstückes
 6. Basis, auf dessen Grundlage das Teilstück korregiert wurde.
+
+##Verbesserungen
+###Accountmanagment
+Das Frotnend umfasst kein Accountmanagment. Auch wenn dies nicht genutzt werden soll, um einzelne Nutzer zu überwachen, wäre jedoch die Umsetzung nicht sonderlich kompleziert und würde die Anwendung für weitere Szenarien öffnen, beispielsweise Fremdleistungen.
+
+###Bildscrolling und 16:9
+Für die Ansicht wurde sich gewünscht das die Karte beim Scrollen durch die Felder imemr sichtbar sein sollte. Dies wurde insofern abgeschwächt, das nun der restliche unbearbeitete Text unter den Feldenr sichtbar ist. Hier müsste eroiert werden, ob und inwiefern die Umsetzung vom bildmitlauf noch gewünscht wäre. Zudem wäre ein Breiteres Desing möglich, da das derzeitge noch etwas Freiraum an den Seiten bietet. Es gab jedoch kein uns bekanntes Szenario das einen anderen Aufbau gerechtfertigt hätte. Hier könnten alternative entworfen werden.
 
 #Jobs
 Aufgrund der Anzahl der zu bearbeiteten Karten war es sinnvoll ein Job System einzuführen, welches in Teilen eingesetzt wurde.
@@ -148,8 +165,31 @@ Als Erweiterung gedacht, jedoch bisher nicht weiter verfolgt. Sollte es notwendi
 
 
 ###Verbesserungen
+
 ####Modularität
 Aufgrund von Problemen beim Import und der Verarbeitung der Karten, läuft der Korrekturprozess nicht Modular. Hier konnte keine kurzfristige und zufriedenstellende Lösung gefunden werden, Callbacks zu integrieren, so das Jobs anderen Jobs melden können, wenn diese durchlaufen wurden. Sollte dies umgesetzt sein, kann die Korrektur auch in einen Job ausgelagert werden. Dies gilt dann auch für das Replacement, erst dann wäre das Job System völlig asynchron. Derzeit sind nur nachgelagerte und vorgelagerte Prozesse in Jobs möglich.
+
+Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in einem Interval neue JobCreator-Jobs erzeugt, damit dieser wiederum neue nachfolgende Jobs erzeugt. Evtl w#äre es möglich hier einen besseren Ansatz zu finden.
+
 ####Datenbasis
 Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke ect. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
 
+####Signaturgenauigkeit
+Derzeit sind Signaturen durch RegExbegriffe ausgezeichnet. Diese sind für treffer sdehr genau, zeigten jedoch das es durchaus gemeinsamkeiten i nder Fehlerhaften erkennung von Zeichen im OCR-Text gibt. 
+So werden oft "S" oder "5" als jeweilige Partner vertauscht. 
+Beispiel: "55 CD 131543" wird zu "5S CD 131S43"
+Durch diesne umstand ist es schwierig korrekte Signaturen umzusetzen, dies liegt vorallem daran, das Signaturen teilweise mehrdeutige Schreibweisen besitzen, so exestieren 55 CD XX, sowei CD XX. Eine Fehlerkennung ist deshalb nicht ausgeschlossen, wen ndie vorangestellten Zeichen nicht richtig durch die OCR erkannt wurden.
+eindeutige Signaturen sidn derzeit sehr zuverlässig und können durch die Ersetzungsregeln auch dann gefunden werden, wenn diese Fehlerbuchstaben enthalten.
+So lassen sich Signaturen wie DMS XX oder NUS XX leicht erkennen und lieferten im Test sehr gute Ergebnisse. Probleme bereiten vorallem sehr uneindeutige Signaturen wie CD oder sehr lange Signaturen, da die Fehlerrate mit der Länge der Signaturen zunimmt. Aufgrund dieser Tatsache, wäre es Ratsam, die Signaturen aus den Kartenbildern direkt zu extraieren und so zumindest die Datenbasis, die derzeit beim ganzen OCR-Text liegt zu begrenzen. Mit unseren Mitteln, war dies jedoch bisher nicht möglich.
+Dies würde zumindest die Fehlerrate senken, die durch verdrehte Buchstabenkombinationen im Quelltext aufkommen.
+
+#Allgemeine Verbesserungen
+
+Dieses Kapietel umfasst alle Vorschläge zu Verbesserungen, die sich nicht einem bestimmten Themengebiet zuordnen lassen.
+
+##Schnitstellen
+Derzeitig liegen alle Daten die erfasst wurden nur im System selbst vor, dies Umfasst die Datenbank, den ElasticSearch und die Kartenbilder selbst.
+Der Hauptaugenmerk lag in der allg. Verfügbarkeit und Machbarkeitsstudie des Projektes. Trotz Fehlerraten und Misserkennung wäre aber bereits eine Nutzung denkbar. Hierfür müssten Schnitstellen defeniert werden über die diese Daten abgerufen werden könnten.
+
+##Nutzung der Daten
+Evtl. wären auch weitere Nutzungsszenarien denkbar, die bisher nicht in erwägung geziogen wurden, da schlicht keine Daten außer den Bildern zur Verfügung standen. So wäre eien experementelle Suche möglich die die Ergebnisse auf wunsch dem allg Datenbestand hinzufügt, um diese für die öffentlichkeit zugänglich zu machen.
