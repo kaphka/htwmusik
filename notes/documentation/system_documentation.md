@@ -196,3 +196,29 @@ Der Hauptaugenmerk lag in der allg. Verfügbarkeit und Machbarkeitsstudie des Pr
 
 ##Nutzung der Daten
 Evtl. wären auch weitere Nutzungsszenarien denkbar, die bisher nicht in Erwägung gezogen wurden, da schlicht keine Daten außer den Bildern zur Verfügung standen. So wäre eine experimentelle Suche möglich die die Ergebnisse auf Wunsch dem allg. Datenbestand hinzufügt, um diese für die Öffentlichkeit zugänglich zu machen.
+
+Meilensteine
+Als agiles Projekt konzipiert und durchgeführt, änderten sich Teilaspekte durch anhaltende Wöchentliche Meetings, jedoch blieben die Ziele im allg. gleich.
+
+So definiert sich als Hauptziel, die Entwicklung eines Systems zur Verarbeitung von Kartenbildern und Überführung in ein System mit anschließender Fehlerkorrektur, Datenaufbereitung/Visualisierung, sowie evtl. Datenextraktion.
+Daraus definieren sich Meilensteine die im Wochenplan festgehalten wurden. Diese unterscheiden sich je nach Anwendungsgebiet.
+Der größte Meilenstein des Projektes, war klar die Präsentation auf der Messe der HTW, diese war ein voller Erfolg, so dass das Projekt als solches als Erfolg verbucht werden kann, auch wenn nicht alle Meilensteine gänzlich erfüllt wurden.
+Die Meilensteine definieren sich aus dem aktuellsten Wochenplan, der für das Projekt angelegt wurde.
+OCR
+TODO JAKOB: Hast du alles erreicht?
+
+Korrektur
+Im Großen und Ganzen wurden alle Meilensteine abgearbeitet und umgesetzt. Dazu gehört das entwickeln eines Systems inkl. ElasticSearch integration, der Prozessmodelierung und Abarbeitung, Entwicklung eines Persitenzmodels, Anlegen eines Jobsystems für asynchrone Tasks, Korrektur von Ergebnissen auf Basis von GND Daten.
+Aufgrund der Veränderung des Prozesses, wurden GND Daten nichtmehr Live über Pazpar2 abgerufen, sondern extern extrahiert. Dies schließt Daten externer Anbieter derzeit aus, da dafür keine Daten erhoben wurden, in diesem Punkt kann nur eine Teilweise Erfüllung angesehen werden.
+Die Technik dahinter ist jedoch vorhanden, so dass einfach weiteren Daten importiert werden können, wen diese erhoben wurden.
+Durch Zeitmangel vor allem am Ende des Projektes, wurde die Accountverwaltung nicht implementiert, diese war zwar immer optimal, war aber theoretisch im ersten Plan festgehalten.
+Der Export von Daten war theoretisch vorgesehen, wurde jedoch nicht umgesetzt, dies würde neu kalkuliert werden müssen.
+
+
+
+Ergebnisse
+Für das Masterprojekt 1 und 2 wurde ein System Entwickelt, das aufzeigt, dass eine automatisierte Erfassung technisch möglich ist. So wurden Bilder in Texte umgewandelt und anschließend versucht, diese zu korrigieren, um abschließend Daten aus diesen gewinnen zu können.
+Die Ergebnisse sind sehr stark abhängig vom gewählten Katalog und der Qualität desselben. So spielte auch die Sprache eine große Rolle, da die OCR ursprünglich auf Englischem Text trainiert wurde. Dies führt zu einer verschobenen Spracherkennung. Dies kann mit mehr validen Trainingsdaten umgangen werden, wofür jedoch eine händische Erfassung notwendig wäre. Dies wäre deshalb voraussichtlich ein Problem an Ressourcen.
+Mit Verbesserung der OCR, ist davon auszugehen das sich das Ergebnis aller anderen Schritte anhebt. Da dies jedoch nicht zu 100% erreicht werden kann, produziert die Korrektur bereits zufriedenstellende Ergebnisse. Diese ist jedoch abhängig von den bereits erhobenen Daten. So zeigte sich, dass vor allem die Inhalte der Karten selbst ein Problem darstellen, da diese zwar logisch strukturiert sind, jedoch nicht ausreichend klare Daten beinhalten. Da dies die letzte Instanz in der Kette vor der Nutzerinteraktion darstellt, sind hier die Korrekturen maßgeblich, dazu gehören natürlich auch die Fehlerraten die durch die Korrektur selbst erzeugt werden. Die abschließende Extraktion stützt sich dann auf die korrekte Korrektur, weshalb dort Misserkennung  das größte Problem darstellt. Sollten Bestandteile weder durch die OCR noch durch die Korrektur genau ermittelt worden sein, ist es sehr schwierig Daten zu erheben. Dies zeigte sich Maßgeblich an den Signaturen, die je nach Katalogart sehr durchwachsende oder sehr gute Ergebnisse lieferten.
+Maßgeblich ist hier auch die Datenbasis die zugrunde liegt, Daten die nicht existieren, können nicht gefunden werden, weshalb eine weitere Datenspeisung ratsam ist.
+Trotz der angesprochenden Probleme, zeigt das Projekt, das es möglich ist, maschinell Daten zu erheben. Diese entsprechen jedoch voraussichtlich nicht den Anforderungen die ein Bibliothekar an seine Sammlung stellt. Hierbei ist jedoch zu betrachten, das Daten die nicht existieren, nicht gefunden werden können und so das in Kauf nehmen von Fehlerraten besser wäre, als 100%tige Ergebnisse. Jedoch ist eine Fehlerrate gegen Null immer anzustreben, weshalb eine weitere Beschäftigung mit dem Projekt ratsam ist.
