@@ -61,6 +61,24 @@ kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
 
 Sollte ein reiner Import ohne Lauf des Korrekturalgorithmus gewünscht sein, sollte als vierter Punkt stattdessen `bundle exec rake bootstrap2` ausgeführt werden.
 
+# Infrastruktur
+Die Hauptapplikation, welche auf Basis von Ruby on Rails 4 entwickelt worden ist, interagiert mit mehreren anderen Softwarekomponenten. Die Struktur während der
+Entwicklungsphase sowie die Deployment-Infrastruktur während der Entwicklung (kann in einem separaten Dokument betrachtet werden)[applikationsstruktur_deployment.md].
+
+Nach dem zeiten Projektsemester sieht die Infrastuktur der Softwarekomponenten wiefolgt aus:
+
+![Infrastructure](https://github.com/kaphka/htwmusik/blob/master/bilder/diagramme/infrastructure_new.png "Infrastructure")
+
+
+| Komponente |  Aufgabe | Konfiguration |
+| ------------ | -------------|------------|
+| Nginx        | Anlaufpunkt der Webapplikation, Reverse Proxy zu Passenger | `/etc/nginx/` |
+| Passenger    | Applikationsserver  | Commandline-Argumente, änderbar [hier](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/puppet/site.pp#L113) |
+| Ruby on Rails  | Applikationsframework | Konfigurationsdateien. Zu finden [hier](https://github.com/albrechtsimon/htwmusic_webapp/tree/master/config) |
+| ElasticSearch | Volltextindizes, Wortkorrektur | Das System nutzt aktuell die default Konfiguration von ElasticSearch. Falls notwendig ist diese anpassbar in `/etc/elasticsearch/elasticsearch.yml` |
+| PostgreSQL | Persistenzschicht der Rails-Applikation | PostgreSQL nutzt seine Standardkonfiguration. Anpassungen möglich in `/etc/postgresql/$version/main/` |
+| Redis | Speicherort für Queues | Redis nutzt ebenfalls die Standardkonfiguration. Anpassungen möglich in `/etc/redis` |
+
 #Frontend
 
 #Aufbau
