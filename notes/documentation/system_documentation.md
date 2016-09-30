@@ -27,6 +27,7 @@ Aufgrund der hohen IO-Last während der Import- und Korrekturschritte des Sytems
 
 # Installation
 Schritte zur einfachen Installation der Applikation auf einem Debian-System als user `root`:
+
 1. `wget https://raw.githubusercontent.com/albrechtsimon/htwmusic_webapp/master/puppet/bootstrap.sh`
 2. `bash bootstrap.sh`
 3. `git clone https://github.com/albrechtsimon/htwmusic_webapp.git`
