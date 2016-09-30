@@ -1,7 +1,67 @@
-#Installation
+# Anforderungen der Applikation
+Im folgenden soll kurz auf die hard- und softwareseitigen Anforderungen der Applikation eingegangen werden.
+## Hardware
+  Es wurde während der Entwicklung des Systems auf zwei Systemen folgender Spezifikationen gearbeitet:
 
+## System 1: Deployment
+| Bauteil |  Beschreibung |
+| ------------ | -------------|
+| CPU | Intel Xeon E3-1225 V2 @3.20GHz (Quad Core) |
+| RAM | 16GB |
+| Festspeicher | 2TB HDD |
 
-#Frontend 
+## System 2: Development
+| Bauteil |  Beschreibung |
+| ------------ | -------------|
+| CPU | Intel Core I7  @3.40GHz (Quad Core mit Hyper-Threading) |
+| RAM | 24GB |
+| Festspeicher | 250GB Samsung 850 EVO SSD |
+
+Beide Systeme wurden zum Import und zur Aufbereitung der Daten genutzt und liefen zufriedenstellend.
+
+Für den Produktiveinsatz mit dem Komplettsatz der Daten wäre allerdings mehr CPU-Leistung (mehr Kerne) sinnvoll, da die Import- und Korrekturprozesse auf den beiden oben gezeigten Systemen eher lange liefen.
+Aufgrund der hohen IO-Last während der Import- und Korrekturschritte des Sytems ist eine SSD einer normalen Festplatte vorzuziehen.
+## Software
+  Wie in einem der Meetings des zweiten Projektsemesters vereinbart, ist die Applikation sowie alle ihre Komponenten
+  vollständig kompatibel zur Linuxdistribution Debian 8 (Jessie).
+
+# Installation
+Schritte zur einfachen Installation der Applikation auf einem Debian-System als user `root`:
+
+1. `wget https://raw.githubusercontent.com/albrechtsimon/htwmusic_webapp/master/puppet/bootstrap.sh`
+2. `bash bootstrap.sh`
+3. `git clone https://github.com/albrechtsimon/htwmusic_webapp.git`
+4. `cd htwmusic_webapp/puppet`
+5. `puppet apply --modulepath=./modules site.pp`
+
+Nach diesen Schritten sollte die Applikation via `http://server_name` erreichbar sein.
+
+## Konfiguration
+Die Applikation ist mittels einer [Konfigurationsdatei](https://github.com/albrechtsimon/htwmusic_webapp/blob/master/config/app.yml)
+auf das jeweilige System anpassbar. Die folgende Tabelle beschreibt die Konfigurationsvariablen:
+
+| Variable |  Beschreibung |
+| ------------ | -------------|
+| `acronyms_path`  | Pfad zu einer CSV-Datei, welche Abkürzungen sowie deren Langform enthält |
+| `raw_data_path` | Pfad zu einem Ordner, welcher Dateien in der Ordnerstruktur und im Format der OCR-Tools enthält  |
+| `words_path` | Pfad zu einem Ordner, der Text-Dateien mit einem Wort pro Zeile enthält |
+| `musical_works_path` | Pfad zu einer CSV-Datei, die Werke enthält |
+| `people_path` | Pfad zu einer CSV-Datei, die Personen enthält |
+| `debug_output` | Boolean. Gibt an, ob die Applikation beim Importprozess Debuginformationen ausgeben soll oder nicht |
+| `data_limit` | Ganzzahl. Beschreibt, nach wie vielen Records der Datenimport beendet werden soll. |
+
+## Bootstrap
+Sobald die im vorangehenden Abschnitt vorgestellten Konfigurationsparameter gesetzt sind und die Applikation wie oben beschrieben installiert worden ist,
+kann ein (in diesem Falle synchroner) Import wiefolgt angestoßen werden:
+
+1. `su - htwmusic`
+2. `cd htwmusic_webapp`
+3. `export RAILS_ENV=production`
+4. `bundle exec rake bootstrap`
+
+Sollte ein reiner Import ohne Lauf des Korrekturalgorithmus gewünscht sein, sollte als vierter Punkt stattdessen `bundle exec rake bootstrap2` ausgeführt werden.
+
+#Frontend
 
 #Aufbau
 Die Basis für das Frontend bildet Rails. Rails dient einerseits als Backend und stellt mit der verwendeten Templateengine ERB alle Ansichten dar. ERB umfasst eine Templatesyntax, welche durch viele Funktionen und Modulen die Entwicklung vereinfacht. Für den Nutzer werden die entsprechenden Daten aufbereitet und abschließend ausgeliefert. Hierbei sind weitere Technologien eingebunden wie u.a. Bootstrap.
@@ -21,7 +81,7 @@ Das Dashboard bildet den Einstieg in die Applikation, in diesem werden alle Kart
 2. Grafische Darstellung der Karten Status
 3. Übersicht der Karten
 
-##Filterungslisten 
+##Filterungslisten
 In der Listenübersicht kann nach Inhalten von Karten gesucht werden, um thematisch zusammenhängende Karten zu finden.
 
 ![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/liste.jpg "Filterliste")
@@ -36,7 +96,7 @@ In der Listenübersicht kann nach Inhalten von Karten gesucht werden, um themati
 Die Kartenübersicht bildet alle gefundenen und verarbeiteten  Daten ab. Diese werden in zwei verschiedenen Ansichten präsentiert, um die Übersicht zu gewährleisten.
  
 ###Felderübersicht
-Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst, sowie der erkannte OCR-Text. 
+Hier werden alle wichtigen Kartendaten angezeigt, dazu gehören die Karte selbst, sowie der erkannte OCR-Text.
 
 ![alt text](https://raw.githubusercontent.com/kaphka/htwmusik/master/bilder/frontend.jpg "Frontend 1")
 
@@ -83,7 +143,7 @@ Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Wo
 
 ##Vorraussetzungen
 Für die Nutzung der Jobs sind folgende Bestandteile notwendig
-###Redis 
+###Redis
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
 
@@ -93,7 +153,7 @@ Die Klasse beschreibt den Job der durch einen Workern durch den Invoke Process e
 
 Die Argumente bestimmen die Parameter der `perform()` Methode, die jeder Job anbieten muss.
 
-Zu beachten ist, dass nur Parameter abgelegt werden können, die in einen JSON umgewandelt  werden können. Es ist deshalb notwendig z.B. auf Objekt IDs zurückzugreifen, anstatt auf direkte Objektreferenzen bei der Übergabe an 
+Zu beachten ist, dass nur Parameter abgelegt werden können, die in einen JSON umgewandelt  werden können. Es ist deshalb notwendig z.B. auf Objekt IDs zurückzugreifen, anstatt auf direkte Objektreferenzen bei der Übergabe an
 
 `Resque.enqueue(ExternalInterpreterLookup, 1, normal)`
 
@@ -102,24 +162,24 @@ Näheres dazu in der Dokumentation von Resque und Redis https://github.com/resqu
 
 ###Resque
 Resque ist ein Job System, welches die Bestandteile von Redis nutzt, um Jobs zu erzeugen und auszuführen.
-Jobs können generell alle Klassen sein die eine `perform()` Methode anbieten, es empfiehlt sich diese jedoch separat zu strukturieren. 
+Jobs können generell alle Klassen sein die eine `perform()` Methode anbieten, es empfiehlt sich diese jedoch separat zu strukturieren.
 Jobs im Projekt liegen in lib/processing/jobs
 Resque bietet mit Workern dann die Basis, Workern erzeugen die entsprechenden Klassen, die ihnen durch Redis übergeben werden und führen die Methode perform() auf diesen aus.
-Worker selbst sind Sub-Prozesse die über 
+Worker selbst sind Sub-Prozesse die über
 
 `COUNT=5 QUEUE=* rake resque:workers`
 
 gestartet werden können. Hierbei bestimmt Count die Anzahl der Worker. Im Projekt zeigte sich, dass eine Anzahl von Workern, die die maximale Kernzahl übersteigt, keinen Performancegewinn erzeugt. Teilweise stürzte die gesamte Workerstruktur dadurch hab, Erklärungen gab es dafür keine und es ist möglich das sich das nicht reproduzieren lässt, es ist daher lediglich als Anmerkung zu sehen.
 
-Für die Verwaltuing bietet resque gleich eine Schnitstelle im Frontend mit diese lässt sich mit 
+Für die Verwaltuing bietet resque gleich eine Schnitstelle im Frontend mit diese lässt sich mit
 
 `/resque_web`
 
 aufrufen und bietet eine Übersicht, die zumeist für das debuggen ausreichte. Näheres dazu in der Dokumentation von Resque.
 
 ###Datenbankadapter
-Es ist notwendig das eine persistente Datenbank zur Verfügung steht, diese muss in Rails definiert sein, da Resque im default diese für seine Jobs benutzt. 
-In der Entwicklung wurden MySql und Postgress verwendet. Theoretisch sind auch andere denkbar. 
+Es ist notwendig das eine persistente Datenbank zur Verfügung steht, diese muss in Rails definiert sein, da Resque im default diese für seine Jobs benutzt.
+In der Entwicklung wurden MySql und Postgress verwendet. Theoretisch sind auch andere denkbar.
 
 ###Überblick
 Es existieren derzeit folgende Jobs im Projekt:
@@ -146,7 +206,7 @@ RegEx
 Der RegEx-Begriff für die Suche
 Replacement
 Sollte es möglich sein eine komplexe Signatur durch Platzhalter aufzulösen, dient das Replacement für die Korrekturangabe nach dem Match.
- 
+
 
 ####FieldReplacer
 Hier werden Felder nach gleichen Einträgen durchsucht, die dann im Anschluss auf einen neuen Typ korrigiert werden.
@@ -186,7 +246,7 @@ Die Notebooks enthalten Untersuchungen über die Daten und unterschiedliche Konv
 
 labelconv ist ein simples Tool um Trainingsdaten für die OCR zu erstellen.
 Im Gegensatz zu den hOCR-Tools von ocropy bietet dieses Tool Features um besser mit den Katalogdatensatz zu arbeiten.
-Es kann ein Seed für die zufällige Auswahl von Textzeilen festgelegt werden. 
+Es kann ein Seed für die zufällige Auswahl von Textzeilen festgelegt werden.
 Danach wird im Browser ein Sample aus dem jeweiligen Katalog gezeigt. So können unabhängige Samples zum trainieren und zum testen erstellt werden.
 
 ## [semconv](https://github.com/kaphka/semconv)
@@ -201,7 +261,7 @@ Es werden lediglich Skripte bereitgestellt, dabei orientiert sich am Aufbau von 
 - process.py: Vorprozessierung//Binarisierung
 - export.py:  Umwandlung ins Exportformat
 
-Die iPython-Notebooks dokumentieren das Trainings eines OCR-Modells, welches fuer das Skript process.py benoetigt wird. 
+Die iPython-Notebooks dokumentieren das Trainings eines OCR-Modells, welches fuer das Skript process.py benoetigt wird.
 
 
 
@@ -214,15 +274,15 @@ Zudem muss für den JobCreator derzeit ein Subprozess generiert werden, der in e
 
 #### Datenbasis und Datenverarbeitung
 Die Datenbasis bildet einerseits die OCR, die sicherlich weiter optimiert werden kann, um die Genauigkeit zu erhöhen, andererseits werden die Werke etc. aus einer Extraktion aus der GND gespeist. Diese stellte sich jedoch als teilweise unzureichend heraus, da viele Daten unberücksichtigt sind. Daraus resultiert, das viele Karten ungenügend aufgelöst werden. Könnten hier mehr Daten angereichert werden, wäre eine Verbesserung, einerseits der Korrektur, andererseits der Auflösung möglich.
- 
+
 In Zukunft sollten zur Datenverarbeitung stärker auf leistungsfähigere Framkeworks gesetzt werden.
-Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechner mit einem Framekwork wie [Spark](https://spark.apache.org/) vorteile bringen. 
-Eine Umstellung auf ein Machine Learning framework würde es möglich machen GPU's zur Erkennung der Textzeilen zu nutzen. Ocropy nutzt bis jetzt "nur" eine CPU-Implementierung für die OCR. 
+Aufgrund der Datenmenge würde eine Verteilung der Prozessierung auf mehre Rechner mit einem Framekwork wie [Spark](https://spark.apache.org/) vorteile bringen.
+Eine Umstellung auf ein Machine Learning framework würde es möglich machen GPU's zur Erkennung der Textzeilen zu nutzen. Ocropy nutzt bis jetzt "nur" eine CPU-Implementierung für die OCR.
 Eine Eigenentwicklung wird aber nicht mehr nötig sein sobald die Erkennung vom transkriptorium-Projekt übernommenen wird.
 
 #### Signaturgenauigkeit
-Derzeit sind Signaturen durch RegEx-Begriffe ausgezeichnet. Diese sind für Treffer sehr genau, zeigten jedoch, dass es durchaus Gemeinsamkeiten in der fehlerhaften Erkennung von Zeichen im OCR-Text gibt. 
-So werden oft "S" oder "5" als jeweilige Partner vertauscht. 
+Derzeit sind Signaturen durch RegEx-Begriffe ausgezeichnet. Diese sind für Treffer sehr genau, zeigten jedoch, dass es durchaus Gemeinsamkeiten in der fehlerhaften Erkennung von Zeichen im OCR-Text gibt.
+So werden oft "S" oder "5" als jeweilige Partner vertauscht.
 Beispiel: "55 CD 131543" wird zu "5S CD 131S43"
 Durch diesen Umstand ist es schwierig korrekte Signaturen umzusetzen, dies liegt vor allem daran, dass Signaturen teilweise mehrdeutige Schreibweisen besitzen, so existieren 55 CD XX, sowie CD XX. Eine Fehlerkennung ist deshalb nicht ausgeschlossen, wenn die vorangestellten Zeichen nicht richtig durch die OCR erkannt wurden.
 eindeutige Signaturen sind derzeit sehr zuverlässig und können durch die Ersetzungsregeln auch dann gefunden werden, wenn diese Fehlerbuchstaben enthalten.
@@ -261,6 +321,7 @@ Der Export von Daten war theoretisch vorgesehen, wurde jedoch nicht umgesetzt, d
 
 
 #Ergebnisse
+
 Für das Masterprojekt 1 und 2 wurde ein System Entwickelt, das aufzeigt, dass eine automatisierte Erfassung technisch möglich ist. So wurden Bilder in Texte umgewandelt und anschließend versucht, diese zu korrigieren, um abschließend Daten aus diesen gewinnen zu können.
 Die Ergebnisse sind sehr stark abhängig vom gewählten Katalog und der Qualität desselben. So spielte auch die Sprache eine große Rolle, da die OCR ursprünglich auf Englischem Text trainiert wurde. Dies führt zu einer verschobenen Spracherkennung. Dies kann mit mehr validen Trainingsdaten umgangen werden, wofür jedoch eine händische Erfassung notwendig wäre. Dies wäre deshalb voraussichtlich ein Problem an Ressourcen.
 Mit Verbesserung der OCR, ist davon auszugehen das sich das Ergebnis aller anderen Schritte anhebt. Da dies jedoch nicht zu 100% erreicht werden kann, produziert die Korrektur bereits zufriedenstellende Ergebnisse. Diese ist jedoch abhängig von den bereits erhobenen Daten. So zeigte sich, dass vor allem die Inhalte der Karten selbst ein Problem darstellen, da diese zwar logisch strukturiert sind, jedoch nicht ausreichend klare Daten beinhalten. Da dies die letzte Instanz in der Kette vor der Nutzerinteraktion darstellt, sind hier die Korrekturen maßgeblich, dazu gehören natürlich auch die Fehlerraten die durch die Korrektur selbst erzeugt werden. Die abschließende Extraktion stützt sich dann auf die korrekte Korrektur, weshalb dort Misserkennung  das größte Problem darstellt. Sollten Bestandteile weder durch die OCR noch durch die Korrektur genau ermittelt worden sein, ist es sehr schwierig Daten zu erheben. Dies zeigte sich Maßgeblich an den Signaturen, die je nach Katalogart sehr durchwachsende oder sehr gute Ergebnisse lieferten.
