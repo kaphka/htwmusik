@@ -19,20 +19,20 @@
 		- [Felderübersicht](#felderübersicht)
 	- [Korrektur](#korrektur)
 	- [Jobs System](#jobs-system)
-	- [Vorraussetzungen](#vorraussetzungen)
-	- [Redis](#redis)
-		- [Resque](#resque)
-		- [Datenbankadapter](#datenbankadapter)
-		- [Überblick](#überblick)
-			- [CardFactory](#cardfactory)
-			- [ExternalWorkLookup](#externalworklookup)
-			- [ExternalInterpreterLookup](#externalinterpreterlookup)
-			- [SignatureLookup](#signaturelookup)
-			- [FieldReplacer](#fieldreplacer)
-			- [JobCreator](#jobcreator)
-			- [AcronymReplacer](#acronymreplacer)
-			- [DataCrawler](#datacrawler)
-		- [Korrekturalgorithmus](#korrekturalgorithmus)
+		- [Vorraussetzungen](#vorraussetzungen)
+		- [Redis](#redis)
+			- [Resque](#resque)
+			- [Datenbankadapter](#datenbankadapter)
+			- [Überblick](#überblick)
+				- [CardFactory](#cardfactory)
+				- [ExternalWorkLookup](#externalworklookup)
+				- [ExternalInterpreterLookup](#externalinterpreterlookup)
+				- [SignatureLookup](#signaturelookup)
+				- [FieldReplacer](#fieldreplacer)
+				- [JobCreator](#jobcreator)
+				- [AcronymReplacer](#acronymreplacer)
+				- [DataCrawler](#datacrawler)
+			- [Korrekturalgorithmus](#korrekturalgorithmus)
 - [Konvertierung der Datenquellen](#konvertierung-der-datenquellen)
 	- [[nbconv](https://github.com/kaphka/nbconv)](#nbconvhttpsgithubcomkaphkanbconv)
 	- [[labelconv](https://github.com/kaphka/labelconv)](#labelconvhttpsgithubcomkaphkalabelconv)
@@ -217,10 +217,10 @@ Hierfür werden Jobs entsprechend der Definition erzeugt und können dann von Wo
 
 [Link: Tabelle zur Beschreibung der Jobs](https://docs.google.com/spreadsheets/d/1IwCB8zNoQtqFbDTImsw28fltzyr2qQ-UGqOYK2JXJtU/edit#gid=0)
 
-##Vorraussetzungen
+###Vorraussetzungen
 Für die Nutzung der Jobs sind folgende Bestandteile notwendig.
 
-##Redis
+###Redis
 Redis ist eine in-memory Datenstruktur die auf einem einfachen Key-Value Cache basiert. In diesem werden die Jobs mit ihren Parametern als JSON gespeichert.
 Als Beispiel kann folgender JSON String dienen:
 
